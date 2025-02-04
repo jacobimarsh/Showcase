@@ -7,12 +7,14 @@ const ChartControls = ({
   setStageIndex,
   isPlaying,
   setIsPlaying,
+  innerWidth,    // New prop for the plot's inner width
+  marginLeft,    // New prop for the left margin
 }) => {
   return (
+  <div style={{ width: innerWidth, marginLeft: `${marginLeft}px`, textAlign: 'center' }}>
     <div className="flex items-center mb-4">
       {/* Current stage text */}
       <label className="w-30 mr-4">{currentStage}</label>
-      
 
       {/* Slider */}
       <input
@@ -38,6 +40,7 @@ const ChartControls = ({
         Pause
       </button>
     </div>
+</div>
   );
 };
 

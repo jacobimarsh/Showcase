@@ -50,11 +50,9 @@ const SweepChart = () => {
 
   // Colours!
   const uniqueScaling = [...new Set(filteredData.map(d => d.scaling))];
-  console.log(uniqueScaling);
   const colorScale = scaleOrdinal()
     .domain(uniqueScaling)
     .range(["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"]); // adjust colors as needed
-  console.log(colorScale);
 
   return (
     <div>
@@ -66,7 +64,9 @@ const SweepChart = () => {
         setStageIndex={setStageIndex}
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}
-      />
+        innerWidth={innerWidth}
+        marginLeft={margin.left}
+        />
       {/* Chart */}
       <svg width={width} height={height} >
         <g transform={`translate(${margin.left},${margin.top})`}>
