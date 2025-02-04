@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { GetData } from './GetData';
-import { format, scaleLinear } from 'd3';
+import { scaleOrdinal, format, scaleLinear } from 'd3';
 import { SweepMarks } from './SweepMarks';
 import ChartControls from './ChartControls'
 import SweepLine from './SweepLine';
@@ -30,7 +30,7 @@ const SweepChart = () => {
     return <div>Loading or no data found...</div>;
   }
 
-  // Filter daata for current stage
+  // Filter data for current stage
   const filteredData = data.filter((d) => d.stage === currentStage); 
 
   // Chart dimensions, scales, etc.
@@ -47,6 +47,14 @@ const SweepChart = () => {
 
   const xScale = scaleLinear().domain([0, 5000]).range([0, innerWidth]);
   const yScale = scaleLinear().domain([0, 0.012]).range([innerHeight, 0]);
+
+  // Colours!
+  const uniqueScaling = [...new Set(filteredData.map(d => d.scaling))];
+  console.log(uniqueScaling);
+  const colorScale = scaleOrdinal()
+    .domain(uniqueScaling)
+    .range(["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"]); // adjust colors as needed
+  console.log(colorScale);
 
   return (
     <div>
@@ -83,6 +91,7 @@ const SweepChart = () => {
             yValue={yValue}
             tooltipFormat={xAxisTickFormat}
             circleRadius={4}
+            colorScale={colorScale}
           />
           {/* Stephan 1993 Eq. 13 line of expected recovery slope */}
           <SweepLine 

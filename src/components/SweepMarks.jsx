@@ -5,7 +5,8 @@ export const SweepMarks = ({
     xValue,
     yValue,
     tooltipFormat,
-    circleRadius
+    circleRadius,
+    colorScale
   }) =>
     data.map((d, i) => (
       <circle
@@ -14,7 +15,7 @@ export const SweepMarks = ({
         cx={xScale(xValue(d))}
         cy={yScale(yValue(d))}
         r={circleRadius}
-        fill="#137B80"
+        fill={colorScale(d.scaling)}
       >
         <title>{tooltipFormat(xValue(d))}</title>
       </circle>
