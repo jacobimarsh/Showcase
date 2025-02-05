@@ -16,7 +16,7 @@ const yAxisLabelOffset = 65;
 
 const SweepChart = () => {
   // Load data and prepare states for cycler
-  const data = GetData(csvUrl);
+  const data = GetData(csvUrl) || [];
   const uniqueStages = data ? [...new Set(data.map((d) => d.stage))] : [];
   const [stageIndex, setStageIndex] = useState(0);
   const currentStage = uniqueStages[stageIndex] || '';
@@ -25,14 +25,19 @@ const SweepChart = () => {
   // Auto-cycle the stageIndex when clicked Play
   useAutoPlay({ isPlaying, setStageIndex, uniqueStages });
 
+  
+  // Filter data for current stage
+  const filteredData = data.filter((d) => d.stage === currentStage && d.distance <= 5001); 
+  
+  const uniqueScaling = [...new Set(filteredData.map(d => d.scaling))];
+  const [selectedScalings, setSelectedScalings] = useState(uniqueScaling);
+  const marksData = filteredData.filter((d) => selectedScalings.includes(d.scaling))
+  
   // If data is not loaded or empty, show a message
   if (!data || data.length === 0) {
     return <div>Loading or no data found...</div>;
   }
-
-  // Filter data for current stage
-  const filteredData = data.filter((d) => d.stage === currentStage); 
-
+  
   // Chart dimensions, scales, etc.
   const innerHeight = height - margin.top - margin.bottom;
   const innerWidth = width - margin.left - margin.right;
@@ -49,10 +54,9 @@ const SweepChart = () => {
   const yScale = scaleLinear().domain([0, 0.012]).range([innerHeight, 0]);
 
   // Colours!
-  const uniqueScaling = [...new Set(filteredData.map(d => d.scaling))];
   const colorScale = scaleOrdinal()
-    .domain(uniqueScaling)
-    .range(["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"]); // adjust colors as needed
+  .domain(uniqueScaling)
+  .range(["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"]); // adjust colors as needed
 
   return (
     <div>
@@ -66,6 +70,9 @@ const SweepChart = () => {
         setIsPlaying={setIsPlaying}
         innerWidth={innerWidth}
         marginLeft={margin.left}
+        uniqueScaling={uniqueScaling}
+        selectedScalings={selectedScalings}
+        setSelectedScalings={setSelectedScalings}      
         />
       {/* Chart */}
       <svg width={width} height={height} >
@@ -84,7 +91,7 @@ const SweepChart = () => {
           />
           {/* Data Marks for the filtered data */}
           <SweepMarks
-            data={filteredData}
+            data={marksData}
             xScale={xScale}
             yScale={yScale}
             xValue={xValue}

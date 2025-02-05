@@ -9,7 +9,19 @@ const ChartControls = ({
   setIsPlaying,
   innerWidth,    // New prop for the plot's inner width
   marginLeft,    // New prop for the left margin
+  uniqueScaling,       // Prop: all available scaling categories
+  selectedScalings,    // Prop: scaling categories currently toggled on
+  setSelectedScalings, // Prop: function to update the selected scalings
 }) => {
+    // Toggle a scaling category on/off
+    const handleCheckboxChange = (scaling) => {
+      if (selectedScalings.includes(scaling)) {
+        setSelectedScalings(selectedScalings.filter(item => item !== scaling));
+      } else {
+        setSelectedScalings([...selectedScalings, scaling]);
+      }
+    };
+
   return (
   <div style={{ width: innerWidth, marginLeft: `${marginLeft}px`, textAlign: 'center' }}>
     <div className="flex items-center mb-4">
@@ -40,6 +52,20 @@ const ChartControls = ({
         Pause
       </button>
     </div>
+          {/* Checkboxes for toggling scaling categories */}
+          <fieldset style={{ marginBottom: '1rem', border: 'none' }}>
+  <legend style={{ marginBottom: '0.5rem' }}>Scaling Categories</legend>
+  {uniqueScaling.map((scaling) => (
+    <label key={scaling} style={{ marginRight: '1rem' }}>
+      <input
+        type="checkbox"
+        checked={selectedScalings.includes(scaling)}
+        onChange={() => handleCheckboxChange(scaling)}
+      />
+      {scaling}
+    </label>
+  ))}
+</fieldset>
 </div>
   );
 };
