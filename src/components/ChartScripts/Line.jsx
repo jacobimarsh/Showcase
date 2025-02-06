@@ -1,6 +1,6 @@
 import { line as d3Line } from 'd3-shape';
 
-const SweepLine = ({ filteredData, xScale, yScale }) => {
+const Line = ({ filteredData, xScale, yScale }) => {
 
 // Prepare a line generator for mean_H1
 const filteredLineData = filteredData
@@ -17,4 +17,4 @@ const lineGenerator = d3Line()
 
 }
 
-export default SweepLine
+export default Line

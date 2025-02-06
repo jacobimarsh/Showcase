@@ -1,6 +1,6 @@
 import React from "react";
 
-const SweepAxisBottom = ({ xScale, innerHeight, tickFormat, tickOffset = 3 }) =>
+const AxisBottom = ({ xScale, innerHeight, tickFormat, tickOffset = 3 }) =>
   xScale.ticks().map(tickValue => (
     <g
       className="tick"
@@ -15,4 +15,4 @@ const SweepAxisBottom = ({ xScale, innerHeight, tickFormat, tickOffset = 3 }) =>
     </g>
   ) 
 );
-export default SweepAxisBottom
+export default AxisBottom

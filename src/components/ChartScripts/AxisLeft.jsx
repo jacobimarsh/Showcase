@@ -1,4 +1,4 @@
-export const SweepAxisLeft = ({
+export const AxisLeft = ({
     yScale,
     innerWidth,
     tickOffset = 3,

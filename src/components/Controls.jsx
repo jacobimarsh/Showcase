@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ChartControls = ({
+const Controls = ({
   currentStage,
   stageIndex,
   uniqueStagesLength,
@@ -70,4 +70,4 @@ const ChartControls = ({
   );
 };
 
-export default ChartControls;
+export default Controls;

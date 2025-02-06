@@ -1,4 +1,4 @@
-export const SweepMarks = ({
+export const Marks = ({
     data,
     xScale,
     yScale,
