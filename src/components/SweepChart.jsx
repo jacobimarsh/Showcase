@@ -14,25 +14,53 @@ const margin = { top: 20, right: 30, bottom: 65, left: 220 };
 const xAxisLabelOffset = 45;
 const yAxisLabelOffset = 65;
 
+const desiredOrder = [ // The desired order of the stages!
+'New beneficial mutation added',
+'Pre-fixation: 0.05 derived allele frequency', 
+'Pre-fixation: 0.1 derived allele frequency', 
+'Pre-fixation: 0.25 derived allele frequency', 
+'Pre-fixation: 0.5 derived allele frequency', 
+'Pre-fixation: 0.75 derived allele frequency', 
+'Fixation of beneficial mutation', 
+'Post-fixation: 0.1N generations', 
+'Post-fixation: 0.2N generations', 
+'Post-fixation: 0.3N generations', 
+'Post-fixation: 0.4N generations', 
+'Post-fixation: 0.5N generations', 
+'Post-fixation: 0.6N generations', 
+'Post-fixation: 0.7N generations', 
+'Post-fixation: 0.8N generations', 
+'Post-fixation: 0.9N generations', 
+'Post-fixation: 1.0N generations', 
+'Post-fixation: 1.5N generations', 
+'Post-fixation: 2.0N generations', 
+'Post-fixation: 2.5N generations', 
+'Post-fixation: 3.0N generations', 
+'Post-fixation: 3.5N generations', 
+'Post-fixation: 4N generations', 
+]
+
 const SweepChart = () => {
   // Load data and prepare states for cycler
   const data = GetData(csvUrl) || [];
-  const uniqueStages = data ? [...new Set(data.map((d) => d.stage))] : [];
+  const uniqueStages = desiredOrder.filter(stage => data.some(d => d.stage === stage));
+  // console.log(NewuniqueStages);
+  // const uniqueStages = data ? [...new Set(data.map((d) => d.stage))] : [];
   const [stageIndex, setStageIndex] = useState(0);
+  // console.log(uniqueStages);
   const currentStage = uniqueStages[stageIndex] || '';
   const [isPlaying, setIsPlaying] = useState(false);
 
   // Auto-cycle the stageIndex when clicked Play
   useAutoPlay({ isPlaying, setStageIndex, uniqueStages });
 
-  
   // Filter data for current stage
   const filteredData = data.filter((d) => d.stage === currentStage && d.distance <= 5001); 
   
   const uniqueScaling = [...new Set(filteredData.map(d => d.scaling))];
-  const [selectedScalings, setSelectedScalings] = useState(uniqueScaling);
-  const marksData = filteredData.filter((d) => selectedScalings.includes(d.scaling))
-  
+    const [selectedScalings, setSelectedScalings] = useState(uniqueScaling);
+    const marksData = filteredData.filter((d) => selectedScalings.includes(d.scaling))
+    
   // If data is not loaded or empty, show a message
   if (!data || data.length === 0) {
     return <div>Loading or no data found...</div>;
@@ -113,3 +141,5 @@ const SweepChart = () => {
 };
 
 export default SweepChart;
+
+// In the stage cycler it should be ordered
