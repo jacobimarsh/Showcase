@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { GetData } from './GetData';
+import { GetData } from './UtilsScripts/GetData';
 import { scaleOrdinal, format, scaleLinear } from 'd3';
-import { SweepMarks } from './SweepMarks';
+import { SweepMarks } from './ChartScripts/Marks';
 import ChartControls from './ChartControls'
-import SweepLine from './SweepLine';
-import SweepChartAxes from './SweepAxes';
-import useAutoPlay from './useAutoPlay';
+import SweepLine from './ChartScripts/Line';
+import SweepChartAxes from './ChartScripts/Axes';
+import useAutoPlay from './ControlsScripts/useAutoPlay';
 
 const csvUrl = '/all_meansdats.csv';
 const width = 960;
@@ -83,54 +83,61 @@ const SweepChart = () => {
   .domain(uniqueScaling)
   .range(["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"]); // adjust colors as needed
 
+  const chartControlsProps = {
+    currentStage,
+    stageIndex,
+    uniqueStagesLength: uniqueStages.length,
+    setStageIndex,
+    isPlaying,
+    setIsPlaying,
+    innerWidth,
+    marginLeft: margin.left,
+    uniqueScaling,
+    selectedScalings,
+    setSelectedScalings,
+  };
+
+  const chartMarksProps = {
+    data: marksData,
+    xScale,
+    yScale,
+    xValue,
+    yValue,
+    tooltipFormat: xAxisTickFormat,
+    circleRadius: 4,
+    colorScale,
+  };
+
+  const chartLineProps = {
+    filteredData,
+    xScale,
+    yScale,
+  };
+
+  const chartAxesProps = {
+    xScale,
+    yScale,
+    innerWidth,
+    innerHeight,
+    xAxisLabel,
+    yAxisLabel,
+    xAxisTickFormat,
+    xAxisLabelOffset,
+    yAxisLabelOffset
+  }
+  // const chartControlsProps = {}
+  // const chartControlsProps = {}
+  
+
   return (
     <div>
       {/* Slider + Stage label + Play/Pause buttons */}
-        <ChartControls
-        currentStage={currentStage}
-        stageIndex={stageIndex}
-        uniqueStagesLength={uniqueStages.length}
-        setStageIndex={setStageIndex}
-        isPlaying={isPlaying}
-        setIsPlaying={setIsPlaying}
-        innerWidth={innerWidth}
-        marginLeft={margin.left}
-        uniqueScaling={uniqueScaling}
-        selectedScalings={selectedScalings}
-        setSelectedScalings={setSelectedScalings}      
-        />
-      {/* Chart */}
-      <svg width={width} height={height} >
+        <ChartControls {...chartControlsProps} /> 
+      <svg width={width} height={height} > /* Chart container */
         <g transform={`translate(${margin.left},${margin.top})`}>
-          {/* Axes */}
-          <SweepChartAxes
-            xScale={xScale}
-            yScale={yScale}
-            innerWidth={innerWidth}
-            innerHeight={innerHeight}
-            xAxisLabel={xAxisLabel}
-            yAxisLabel={yAxisLabel}
-            xAxisTickFormat={xAxisTickFormat}
-            xAxisLabelOffset={xAxisLabelOffset}
-            yAxisLabelOffset={yAxisLabelOffset}
-          />
-          {/* Data Marks for the filtered data */}
-          <SweepMarks
-            data={marksData}
-            xScale={xScale}
-            yScale={yScale}
-            xValue={xValue}
-            yValue={yValue}
-            tooltipFormat={xAxisTickFormat}
-            circleRadius={4}
-            colorScale={colorScale}
-          />
-          {/* Stephan 1993 Eq. 13 line of expected recovery slope */}
-          <SweepLine 
-            filteredData={filteredData} 
-            xScale={xScale} 
-            yScale={yScale} 
-          />
+          <SweepChartAxes {...chartAxesProps} /> /* Axes */
+          <SweepMarks {...chartMarksProps} /> /* Dots */
+          <SweepLine {...chartLineProps} /> /* Stephan 1993 Eq. 13 line of expected recovery slope */
         </g>
       </svg>
     </div>
@@ -138,5 +145,3 @@ const SweepChart = () => {
 };
 
 export default SweepChart;
-
-// In the stage cycler it should be ordered

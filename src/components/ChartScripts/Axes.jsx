@@ -1,5 +1,5 @@
-import SweepAxisBottom from './SweepAxisBottom';
-import { SweepAxisLeft } from './SweepAxisLeft';
+import SweepAxisBottom from './AxisBottom';
+import { SweepAxisLeft } from './AxisLeft';
 
 const SweepChartAxes = ({ xScale, yScale, innerWidth, innerHeight, xAxisLabel, yAxisLabel, xAxisTickFormat, xAxisLabelOffset, yAxisLabelOffset }) => (
   <>
