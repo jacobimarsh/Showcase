@@ -44,10 +44,7 @@ const SweepChart = () => {
   // Load data and prepare states for cycler
   const data = GetData(csvUrl) || [];
   const uniqueStages = desiredOrder.filter(stage => data.some(d => d.stage === stage));
-  // console.log(NewuniqueStages);
-  // const uniqueStages = data ? [...new Set(data.map((d) => d.stage))] : [];
   const [stageIndex, setStageIndex] = useState(0);
-  // console.log(uniqueStages);
   const currentStage = uniqueStages[stageIndex] || '';
   const [isPlaying, setIsPlaying] = useState(false);
 
