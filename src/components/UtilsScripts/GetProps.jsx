@@ -3,13 +3,11 @@ import { useState } from 'react';
 import { scaleOrdinal, format, scaleLinear } from 'd3';
 import useAutoPlay from '../ControlsScripts/useAutoPlay';
 
-
 const width = 960;
 const height = 500;
 const margin = { top: 20, right: 30, bottom: 65, left: 220 };
 const xAxisLabelOffset = 45;
 const yAxisLabelOffset = 65;
-
 
 const desiredOrder = [
   'New beneficial mutation added',

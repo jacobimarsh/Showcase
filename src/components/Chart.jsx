@@ -1,4 +1,3 @@
-// Chart.jsx
 import React from 'react';
 import Axes from './ChartScripts/Axes.jsx';
 import { Marks } from './ChartScripts/Marks.jsx';

@@ -5,7 +5,6 @@ const Controls = ({
   stageIndex,
   uniqueStagesLength,
   setStageIndex,
-  isPlaying,
   setIsPlaying,
   innerWidth,    // New prop for the plot's inner width
   marginLeft,    // New prop for the left margin
