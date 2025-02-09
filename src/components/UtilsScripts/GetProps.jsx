@@ -1,4 +1,3 @@
-// useChartProps.js
 import { useState } from 'react';
 import { scaleOrdinal, format, scaleLinear } from 'd3';
 import useAutoPlay from '../ControlsScripts/useAutoPlay';
@@ -84,6 +83,7 @@ const GetProps = (data) => {
     uniqueScaling,
     selectedScalings,
     setSelectedScalings,
+    colorScale,
   };
 
   const chartAxesProps = {

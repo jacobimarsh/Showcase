@@ -11,6 +11,7 @@ const Controls = ({
   uniqueScaling,       // Prop: all available scaling categories
   selectedScalings,    // Prop: scaling categories currently toggled on
   setSelectedScalings, // Prop: function to update the selected scalings
+  colorScale
 }) => {
     // Toggle a scaling category on/off
     const handleCheckboxChange = (scaling) => {
@@ -25,7 +26,7 @@ const Controls = ({
   <div style={{ width: innerWidth, marginLeft: `${marginLeft}px`, textAlign: 'center' }}>
     <div className="flex items-center mb-4">
       {/* Current stage text */}
-      <label className="w-30 mr-4">{currentStage}</label>
+      <label className="w-44 mr-4">{currentStage}</label>
 
       {/* Slider */}
       <input
@@ -51,20 +52,28 @@ const Controls = ({
         Pause
       </button>
     </div>
-          {/* Checkboxes for toggling scaling categories */}
-          <fieldset style={{ marginBottom: '1rem', border: 'none' }}>
-  <legend style={{ marginBottom: '0.5rem' }}>Scaling Categories</legend>
-  {uniqueScaling.map((scaling) => (
-    <label key={scaling} style={{ marginRight: '1rem' }}>
-      <input
-        type="checkbox"
-        checked={selectedScalings.includes(scaling)}
-        onChange={() => handleCheckboxChange(scaling)}
-      />
-      {scaling}
-    </label>
-  ))}
-</fieldset>
+      {/* Scaling factors toggled as buttons */}
+      <fieldset style={{ marginBottom: '1rem', border: 'none' }}>
+        <legend style={{ marginBottom: '0.5rem' }}>Scaling factors</legend>
+        {uniqueScaling.map((scaling) => {
+          const isChecked = selectedScalings.includes(scaling);
+          const currentColor = colorScale(scaling);
+          return (
+            <button
+              key={scaling}
+              onClick={() => handleCheckboxChange(scaling)}
+              className="mr-2 px-4 py-2 rounded-xl transition duration-200 focus:outline-none"
+              style={{
+                backgroundColor: isChecked ? currentColor : 'white',
+                color: isChecked ? 'white' : currentColor,
+                border: `2px solid ${currentColor}`
+              }}
+            >
+              {scaling}
+            </button>
+          );
+        })}
+      </fieldset>
 </div>
   );
 };

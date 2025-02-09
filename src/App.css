@@ -11,3 +11,19 @@ body {
   font-size: 20px;
   color: #3e3c38
 }
+
+legend {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  color: #3e3c38;
+  margin-bottom: 1rem;
+}
+
+button {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: bold;
+}

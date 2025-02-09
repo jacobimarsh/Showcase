@@ -3,6 +3,7 @@ import { GetData } from './components/UtilsScripts/GetData.jsx';
 import GetProps from './components/UtilsScripts/GetProps.jsx';
 import Controls from './components/Controls.jsx';
 import Chart from './components/Chart.jsx'
+import './app.css'
 
 const App = () => {
   const csvUrl = '/all_meansdats.csv'; const data = GetData(csvUrl) || [];
