@@ -12,7 +12,7 @@ const lineGenerator = d3Line()
   // .curve(curveMonotoneX);
 
   return (
-    <path d={lineGenerator(filteredLineData)} fill="none" stroke="red" strokeWidth={2} />
+    <path d={lineGenerator(filteredLineData)} fill="none" stroke="black" strokeWidth={2} />
   );
 
 }

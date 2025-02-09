@@ -10,8 +10,10 @@ export const AxisLeft = ({
     //   d3.select(gRef.current);
     //   // Render the axis
     // },[yScale]);
+    const labelTicks = [0.002, 0.004, 0.006, 0.008, 0.010, 0.012];
+    const allTickValues = [0, 0.001,0.002,0.003,0.004,0.005,0.006,0.007,0.008,0.009,0.010,0.011,0.012, 0.013];
   
-    return yScale.ticks().map((tickValue) => (
+    return allTickValues.map((tickValue) => (
       <g
         key={tickValue}
         className="tick"
@@ -27,7 +29,7 @@ export const AxisLeft = ({
           dy=".32em"
           fill= "#635F5D"
         >
-          {tickValue}
+        {labelTicks.includes(tickValue) ? tickValue.toFixed(3) : ''}
         </text>
       </g>
     ));

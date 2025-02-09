@@ -62,10 +62,15 @@ const GetProps = (data) => {
   const yValue = (d) => d.mean_pi;
   const xAxisLabel = 'Distance from sweep (bp)';
   const yAxisLabel = 'Mean diversity (pi)';
-  const siFormat = format('.2s');
-  const xAxisTickFormat = (tickValue) => siFormat(tickValue).replace('G', 'B');
+  const siFormat = format('.0s');
+  const xAxisTickFormat = (tickValue) => {
+    if (tickValue === 0) return "0";
+    let formatted = siFormat(tickValue).replace('G', 'B');
+    formatted = formatted.replace(/k$/, '');
+    return `${formatted} kb`;
+  };
   const xScale = scaleLinear().domain([0, 5000]).range([0, innerWidth]);
-  const yScale = scaleLinear().domain([0, 0.012]).range([innerHeight, 0]);
+  const yScale = scaleLinear().domain([0, 0.013]).range([innerHeight, 0]);
   const colorScale = scaleOrdinal()
     .domain(uniqueScaling)
     .range(["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"]);

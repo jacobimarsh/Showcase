@@ -5,7 +5,7 @@ start,stage,mean_pi,bin,mean_H1,scaling
 1,Pre-fixation: 0.25 derived allele frequency,0.010742658467527472,NA,NA,X = 25
 1,Post-fixation: 0.2N generations,0.003959945756173722,1,0.002225751436243246,X = 25
 1,Post-fixation: 0.3N generations,0.004388878855011013,1,0.002702447163770732,X = 25
-1,Post-fixation: 0.4N generations,0.004750418655947136,1,0.003155894166328653,X = 25w
+1,Post-fixation: 0.4N generations,0.004750418655947136,1,0.003155894166328653,X = 25
 1,Pre-fixation: 0.5 derived allele frequency,0.009189551484945055,NA,NA,X = 25
 1,Post-fixation: 0.5N generations,0.005057563699174009,1,0.0035872262976133964,X = 25
 1,Post-fixation: 0.6N generations,0.005397269589509912,1,0.00399752211262405,X = 25

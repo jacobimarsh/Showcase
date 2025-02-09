@@ -8,8 +8,8 @@ const Chart = ({ axesProps, marksProps, lineProps }) => {
     <svg width={axesProps.svgWidth} height={axesProps.svgHeight}>
       <g transform={`translate(${axesProps.marginLeft}, ${axesProps.marginTop})`}>
         <Axes {...axesProps} />
-        <Marks {...marksProps} />
         <Line {...lineProps} />
+        <Marks {...marksProps} />
       </g>
     </svg>
   );
