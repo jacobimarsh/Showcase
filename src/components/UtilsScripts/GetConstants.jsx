@@ -34,7 +34,7 @@ const desiredOrder = [
   'Post-fixation: 4N generations', 
 ];
 
-const GetProps = (data) => {
+const GetConstants = (data) => {
   
   // Stage logic
   const uniqueStages = desiredOrder.filter(stage => data.some(d => d.stage === stage));
@@ -61,7 +61,7 @@ const GetProps = (data) => {
   const xValue = (d) => d.distance;
   const yValue = (d) => d.mean_pi;
   const xAxisLabel = 'Distance from sweep (bp)';
-  const yAxisLabel = 'Mean diversity (pi)';
+  const yAxisLabel = 'Mean diversity (\u03C0)';
   const siFormat = format('.0s');
   const xAxisTickFormat = (tickValue) => {
     if (tickValue === 0) return "0";
@@ -134,4 +134,4 @@ const GetProps = (data) => {
   };
 };
 
-export default GetProps;
+export default GetConstants;

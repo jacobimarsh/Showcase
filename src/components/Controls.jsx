@@ -1,10 +1,14 @@
 import React from 'react';
+import { FaPlay, FaPause } from 'react-icons/fa';
+import Slider from '@mui/material/Slider';
+
 
 const Controls = ({
   currentStage,
   stageIndex,
   uniqueStagesLength,
   setStageIndex,
+  isPlaying,
   setIsPlaying,
   innerWidth,    // New prop for the plot's inner width
   marginLeft,    // New prop for the left margin
@@ -22,36 +26,63 @@ const Controls = ({
       }
     };
 
+  // Calculate tick spacing as a percentage of the slider width.
+  const tickSpacing = uniqueStagesLength > 1 ? 100 / (uniqueStagesLength - 1) : 0;
+  // Create marks for the slider. If you want to include labels,
+  // you can modify the objects below. For now, we simply create tick marks.
+  const marks = Array.from({ length: uniqueStagesLength }, (_, i) => ({
+    value: i,
+    label: '' // or add a label if available (e.g., uniqueStages[i])
+  }));
+
   return (
   <div style={{ width: innerWidth, marginLeft: `${marginLeft}px`, textAlign: 'center' }}>
-    <div className="flex items-center mb-4">
+      
       {/* Current stage text */}
       <label className="w-44 mr-4">{currentStage}</label>
 
-      {/* Slider */}
-      <input
-        type="range"
-        min="0"
-        max={uniqueStagesLength - 1}
-        value={stageIndex}
-        onChange={(e) => setStageIndex(Number(e.target.value))}
-        className="flex-grow mx-4"
-      />
+    <div className="flex items-center mb-4">
 
-      {/* Play/Pause Buttons */}
+      {/* Play/Pause toggle Button */}
       <button
-        onClick={() => setIsPlaying(true)}
-        className="mr-2 px-4 py-2 bg-blue-500 text-white rounded"
-      >
-        Play
-      </button>
-      <button
-        onClick={() => setIsPlaying(false)}
-        className="px-4 py-2 bg-red-500 text-white rounded"
-      >
-        Pause
-      </button>
+          onClick={() => setIsPlaying(!isPlaying)}
+          className="mr-2 px-4 py-2 rounded"
+        >
+          {isPlaying ? <FaPause /> : <FaPlay />}
+        </button>
+
+      {/* Slider */}
+
+        {/* MUI Discrete Slider */}
+        <Slider
+  value={stageIndex}
+  onChange={(event, newValue) => setStageIndex(newValue)}
+  min={0}
+  max={uniqueStagesLength - 1}
+  step={1}
+  marks={marks}
+  valueLabelDisplay="auto"
+  className="flex-grow mx-4"
+  sx={{
+    color: 'grey', // This sets the color of the track and thumb by default
+    '& .MuiSlider-thumb': {
+      backgroundColor: 'grey',
+      border: '2px solid grey',
+    },
+    '& .MuiSlider-track': {
+      backgroundColor: 'grey',
+    },
+    '& .MuiSlider-mark': {
+      backgroundColor: 'grey',
+    },
+    '& .MuiSlider-markLabel': {
+      color: 'grey',
+    }
+  }}
+/>
     </div>
+
+
       {/* Scaling factors toggled as buttons */}
       <fieldset style={{ marginBottom: '1rem', border: 'none' }}>
         <legend style={{ marginBottom: '0.5rem' }}>Scaling factors</legend>

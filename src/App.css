@@ -26,4 +26,41 @@ legend {
 button {
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: bold;
+    color: #3e3c38;
+    cursor: pointer;
+}
+
+text {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+input[type="range"].slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background: #ccc; /* gray track */
+  border-radius: 2px;
+  outline: none;
+  margin: 0;  /* Remove default margin if any */
+}
+
+/* WebKit thumb styling */
+input[type="range"].slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #888;
+  cursor: pointer;
+  margin-top: -6px; /* (16/2 - 4/2) = 8 - 2 = 6px */
+}
+
+/* Firefox thumb styling */
+input[type="range"].slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #888;
+  cursor: pointer;
 }
