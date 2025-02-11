@@ -30,10 +30,6 @@ button {
     cursor: pointer;
 }
 
-text {
-  font-family: 'IBM Plex Sans', sans-serif;
-}
-
 input[type="range"].slider {
   -webkit-appearance: none;
   width: 100%;
@@ -51,7 +47,7 @@ input[type="range"].slider::-webkit-slider-thumb {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #888;
+  background: #3e3c38;
   cursor: pointer;
   margin-top: -6px; /* (16/2 - 4/2) = 8 - 2 = 6px */
 }
@@ -61,6 +57,6 @@ input[type="range"].slider::-moz-range-thumb {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #888;
+  background: #3e3c38;
   cursor: pointer;
 }
