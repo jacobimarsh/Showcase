@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 const useAutoPlay = ({ isPlaying, setStageIndex, uniqueStages }) => {
   useEffect(() => {
@@ -7,7 +7,7 @@ const useAutoPlay = ({ isPlaying, setStageIndex, uniqueStages }) => {
     if (isPlaying && uniqueStages.length > 0) {
       intervalId = setInterval(() => {
         setStageIndex((prevIndex) =>
-          prevIndex >= uniqueStages.length - 1 ? 0 : prevIndex + 1
+          prevIndex >= uniqueStages.length - 1 ? 0 : prevIndex + 1,
         );
       }, 800);
     }

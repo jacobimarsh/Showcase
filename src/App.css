@@ -9,11 +9,11 @@ body {
 
 #vg-tooltip-element {
   font-size: 20px;
-  color: #3e3c38
+  color: #3e3c38;
 }
 
 legend {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 1.25rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -24,10 +24,10 @@ legend {
 }
 
 button {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: bold;
-    color: #3e3c38;
-    cursor: pointer;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: bold;
+  color: #3e3c38;
+  cursor: pointer;
 }
 
 input[type="range"].slider {
@@ -37,7 +37,7 @@ input[type="range"].slider {
   background: #ccc; /* gray track */
   border-radius: 2px;
   outline: none;
-  margin: 0;  /* Remove default margin if any */
+  margin: 0; /* Remove default margin if any */
 }
 
 /* WebKit thumb styling */
