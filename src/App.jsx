@@ -1,6 +1,6 @@
 import React from "react";
 import { GetData } from "./components/UtilsScripts/GetData.jsx";
-import GetConstants from "./components/UtilsScripts/GetConstants.jsx";
+import GetProps from "./components/UtilsScripts/GetProps.jsx";
 import Controls from "./components/Controls.jsx";
 import Legend from "./components/Legend.jsx";
 import Chart from "./components/Chart.jsx";
@@ -15,7 +15,7 @@ const App = () => {
     chartAxesProps,
     chartMarksProps,
     chartLineProps,
-  } = GetConstants(data);
+  } = GetProps(data);
   if (!data || data.length === 0) {
     return <div>Loading or no data found...</div>;
   }

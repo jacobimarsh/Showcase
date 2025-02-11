@@ -34,7 +34,7 @@ const desiredOrder = [
   "Post-fixation: 4N generations",
 ];
 
-const GetConstants = (data) => {
+const GetProps = (data) => {
   // Stage logic
   const uniqueStages = desiredOrder.filter((stage) =>
     data.some((d) => d.stage === stage),
@@ -145,4 +145,4 @@ const GetConstants = (data) => {
   };
 };
 
-export default GetConstants;
+export default GetProps;
