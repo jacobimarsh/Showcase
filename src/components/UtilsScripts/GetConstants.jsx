@@ -76,7 +76,7 @@ const GetConstants = (data) => {
     .range(["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"]);
 
   // Prepare props for each subcomponent
-  const chartControlsProps = {
+  const controlsProps = {
     currentStage,
     stageIndex,
     uniqueStagesLength: uniqueStages.length,
@@ -89,6 +89,15 @@ const GetConstants = (data) => {
     selectedScalings,
     setSelectedScalings,
     colorScale,
+  };
+
+  const legendProps = {
+    innerWidth,    // New prop for the plot's inner width
+    marginLeft: margin.left,    // New prop for the left margin
+    uniqueScaling,       // Prop: all available scaling categories
+    selectedScalings,    // Prop: scaling categories currently toggled on
+    setSelectedScalings, // Prop: function to update the selected scalings
+    colorScale
   };
 
   const chartAxesProps = {
@@ -127,7 +136,8 @@ const GetConstants = (data) => {
 
   return {
     data,
-    chartControlsProps,
+    controlsProps,
+    legendProps,
     chartAxesProps,
     chartMarksProps,
     chartLineProps,
