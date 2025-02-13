@@ -26,8 +26,8 @@ const Legend = ({
       }}
     >
       {/* Scaling factors toggled as buttons */}
-      <fieldset style={{ marginBottom: "1rem", border: "none" }}>
-        <legend style={{ marginBottom: "0.5rem" }}>Scaling factors</legend>
+      <fieldset style={{ border: "none" }}>
+        <legend style={{ }}>Scaling factors</legend>
         {uniqueScaling.map((scaling) => {
           const isChecked = selectedScalings.includes(scaling);
           const currentColor = colorScale(scaling);
