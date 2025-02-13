@@ -60,3 +60,12 @@ input[type="range"].slider::-moz-range-thumb {
   background: #3e3c38;
   cursor: pointer;
 }
+
+label {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  color: #3e3c38;
+  margin-bottom: 1rem;
+}
