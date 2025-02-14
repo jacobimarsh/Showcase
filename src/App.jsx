@@ -7,7 +7,7 @@ import Chart from "./components/Chart.jsx";
 import "./app.css";
 
 const App = () => {
-  const csvUrl = "/all_meansdats.csv";
+  const csvUrl = "/processed_sweepdata.csv";
   const data = GetData(csvUrl) || [];
   const {
     controlsProps,
