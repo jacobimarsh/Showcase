@@ -4,7 +4,7 @@ import useAutoPlay from "../ControlsScripts/useAutoPlay";
 
 const width = 960;
 const height = 500;
-const margin = { top: 20, right: 30, bottom: 65, left: 220 };
+const margin = { top: 20, right: 30, bottom: 65, left: 140 };
 const xAxisLabelOffset = 45;
 const yAxisLabelOffset = 65;
 
@@ -72,7 +72,8 @@ console.log(uniqueScaling);
     formatted = formatted.replace(/k$/, "");
     return `${formatted} kb`;
   };
-  const xScale = scaleLinear().domain([0, 5000]).range([0, innerWidth]);
+  // const xScale = scaleLinear().domain([0, 5000]).range([0, innerWidth]);
+  const xScale = scaleLinear().domain([-3000, 3000]).range([0, innerWidth]);
   const yScale = scaleLinear().domain([0, 0.013]).range([innerHeight, 0]);
   const colorScale = scaleOrdinal()
     .domain(uniqueScaling)
@@ -127,7 +128,7 @@ console.log(uniqueScaling);
     xValue,
     yValue,
     tooltipFormat: xAxisTickFormat,
-    circleRadius: 4,
+    circleRadius: 4.5,
     colorScale,
   };
 

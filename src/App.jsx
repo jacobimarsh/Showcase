@@ -7,7 +7,8 @@ import Chart from "./components/Chart.jsx";
 import "./app.css";
 
 const App = () => {
-  const csvUrl = "/processed_sweepdata.csv";
+  // const csvUrl = "/processed_sweepdata.csv"; // Old data pre-mirror
+  const csvUrl = "/mirrored_data.csv"; // Mirrored so that negative distances shown too
   const data = GetData(csvUrl) || [];
   const {
     controlsProps,

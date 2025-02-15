@@ -8,7 +8,8 @@ export const Marks = ({
   circleRadius,
   colorScale,
 }) =>
-  data.map((d, i) => (
+  data.filter(d => xValue(d) !== 1 && xValue(d) !== -1)
+  .map((d, i) => (
     <circle
       key={i}
       className="mark"
