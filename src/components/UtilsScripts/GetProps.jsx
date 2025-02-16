@@ -9,7 +9,7 @@ const xAxisLabelOffset = 45;
 const yAxisLabelOffset = 65;
 
 const desiredOrder = [
-  "New beneficial allele introduced!",
+  "New beneficial mutation!",
   "Pre-fixation: selected allele frequency at 0.05", 
   "Pre-fixation: selected allele frequency at 0.10", 
   "Pre-fixation: selected allele frequency at 0.25", 
