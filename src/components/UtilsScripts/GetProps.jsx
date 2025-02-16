@@ -51,9 +51,7 @@ const GetProps = (data) => {
 
   // Scaling & selection logic
   const uniqueScaling = [...new Set(filteredData.map((d) => d.scaling))];
-
-console.log(uniqueScaling);
-  const [selectedScalings, setSelectedScalings] = useState("X = 625");
+  const [selectedScalings, setSelectedScalings] = useState(["X = 625"]);
   const marksData = filteredData.filter((d) => !Number.isNaN(d.mean_pi)).filter((d) =>
     selectedScalings.includes(d.scaling),
   );

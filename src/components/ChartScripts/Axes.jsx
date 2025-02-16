@@ -26,7 +26,7 @@ const Axes = ({
       y={innerHeight + xAxisLabelOffset}
       textAnchor="middle"
       fill="#635F5D"
-      fontSize="1.5em"
+      fontSize="1.4em"
     >
       {xAxisLabel}
     </text>
@@ -38,7 +38,7 @@ const Axes = ({
       textAnchor="middle"
       transform={`translate(${-yAxisLabelOffset},${innerHeight / 2}) rotate(-90)`}
       fill="#635F5D"
-      fontSize="1.5em"
+      fontSize="1.4em"
     >
       {yAxisLabel}
     </text>

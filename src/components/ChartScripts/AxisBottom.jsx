@@ -1,7 +1,7 @@
 import React from "react";
 
 const AxisBottom = ({ xScale, innerHeight, tickFormat, tickOffset = 3 }) => {
-  const labelTicks = [0, 1000, 2000, 3000, 4000, 5000];
+  const labelTicks = [-3000, -2000, -1000, 0, 1000, 2000, 3000];
 
   return xScale.ticks().map((tickValue) => (
     <g

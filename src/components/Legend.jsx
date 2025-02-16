@@ -27,7 +27,7 @@ const Legend = ({
     >
       {/* Scaling factors toggled as buttons */}
       <fieldset style={{ border: "none" }}>
-        <legend style={{ }}>Scaling factors</legend>
+        <legend style={{  }}>Scaling factors</legend>
         {uniqueScaling.map((scaling) => {
           const isChecked = selectedScalings.includes(scaling);
           const currentColor = colorScale(scaling);
@@ -37,6 +37,7 @@ const Legend = ({
               onClick={() => handleCheckboxChange(scaling)}
               className="mr-2 px-4 py-2 rounded-xl transition duration-200 focus:outline-none"
               style={{
+                width: "93px",
                 backgroundColor: isChecked ? currentColor : "white",
                 color: isChecked ? "white" : currentColor,
                 border: `2px solid ${currentColor}`,

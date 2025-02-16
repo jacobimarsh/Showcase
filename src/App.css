@@ -62,7 +62,7 @@ input[type="range"].slider::-moz-range-thumb {
 
 label {
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: bold;
   padding: 0.5rem 1rem;
   color: #3e3c38;
