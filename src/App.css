@@ -68,3 +68,12 @@ label {
   color: #3e3c38;
   margin-bottom: 1rem;
 }
+
+.MuiTooltip-tooltip {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 14px;
+}
+
+.MuiTooltip-arrow {
+  color: #3e3c38 !important;
+}

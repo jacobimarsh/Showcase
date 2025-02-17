@@ -1,4 +1,5 @@
 import React from "react";
+import SFTooltip from "./Tooltips/SFTooltip";
 
 const Legend = ({
   innerWidth, // New prop for the plot's inner width
@@ -25,9 +26,29 @@ const Legend = ({
         textAlign: "center",
       }}
     >
+
+
       {/* Scaling factors toggled as buttons */}
       <fieldset style={{ border: "none" }}>
-        <legend style={{  }}>Scaling factors</legend>
+      <legend
+          style={{
+            position: "relative",
+            display: "inline-block",
+          }}
+        >
+          <span>Scaling factors</span>
+          <div
+            style={{
+              position: "absolute",
+              left: "95%",
+              top: "49%",
+              transform: "translateX(0px) translateY(-54%)",
+            }}
+          >
+            <SFTooltip />
+          </div>
+        </legend>
+
         {uniqueScaling.map((scaling) => {
           const isChecked = selectedScalings.includes(scaling);
           const currentColor = colorScale(scaling);
