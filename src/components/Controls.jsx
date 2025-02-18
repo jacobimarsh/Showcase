@@ -41,6 +41,7 @@ const Controls = ({
         <Slider
   value={stageIndex}
   onChange={(event, newValue) => setStageIndex(newValue)}
+  onChangeCommitted={(event, newValue) => setIsPlaying(false)}
   min={0}
   max={uniqueStagesLength - 1}
   step={1}
