@@ -14,8 +14,8 @@ const Line = ({ filteredData, xScale, yScale }) => {
     <path
       d={lineGenerator(filteredLineData)}
       fill="none"
-      stroke="black"
-      strokeWidth={2}
+      stroke="#3e3c38"
+      strokeWidth={2.5}
     />
   );
 };

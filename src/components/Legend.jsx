@@ -40,7 +40,7 @@ const Legend = ({
           <div
             style={{
               position: "absolute",
-              left: "95%",
+              left: "94%",
               top: "49%",
               transform: "translateX(0px) translateY(-54%)",
             }}

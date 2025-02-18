@@ -22,8 +22,8 @@ const App = () => {
   }
 
   return (
-    <div>
-      <Legend {...legendProps} />
+    <div style={{ overflowX: "auto", width: "100%" }}>      
+    <Legend {...legendProps} />
       <Chart
         axesProps={chartAxesProps}
         marksProps={chartMarksProps}
