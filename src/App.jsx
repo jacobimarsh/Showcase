@@ -4,11 +4,11 @@ import GetProps from "./components/UtilsScripts/GetProps.jsx";
 import Controls from "./components/Controls.jsx";
 import Legend from "./components/Legend.jsx";
 import Chart from "./components/Chart.jsx";
-import "./app.css";
+import "./App.css";
 
 const App = () => {
   // const csvUrl = "/processed_sweepdata.csv"; // Old data pre-mirror
-  const csvUrl = "/mirrored_data.csv"; // Mirrored so that negative distances shown too
+  const csvUrl = `${import.meta.env.BASE_URL}mirrored_data.csv`; // Mirrored so that negative distances shown too
   const data = GetData(csvUrl) || [];
   const {
     controlsProps,
