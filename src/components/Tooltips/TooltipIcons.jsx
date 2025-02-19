@@ -1,4 +1,5 @@
 import React from "react";
+// Rendered in components/ChartScripts/Marks.jsx
 
 const TooltipIcons = ({
   circleX,
