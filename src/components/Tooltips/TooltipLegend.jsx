@@ -15,7 +15,7 @@ const DotTooltip = () => {
       style={{
         position: "absolute",
         left: originalLeft - extraHoverArea, // shift left by extraHoverArea
-        top: 118 + 31,
+        top: 118 + 33,
         cursor: "pointer",
       }}
     >
@@ -47,7 +47,7 @@ const LineTooltip = () => {
       style={{
         position: "absolute",
         left: originalLeft - extraHoverArea,
-        top: 118,
+        top: 119,
         cursor: "pointer",
       }}
     >
