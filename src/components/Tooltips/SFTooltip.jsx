@@ -3,9 +3,13 @@ import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
-const SFTooltip = () => {
+const SFTooltip = ({ open }) => {
   return (
-    <Tooltip title="Simulated population size is divided by X for tractability" placement="right">
+    <Tooltip 
+      title="Simulated population size is divided by X for tractability" 
+      placement="right"
+      open={open}
+    >
       <IconButton
         sx={{
           padding: 0,

@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import SFTooltip from "./Tooltips/SFTooltip";
 
 const Legend = ({
-  innerWidth, // New prop for the plot's inner width
-  marginLeft, // New prop for the left margin
-  uniqueScaling, // Prop: all available scaling categories
-  selectedScalings, // Prop: scaling categories currently toggled on
-  setSelectedScalings, // Prop: function to update the selected scalings
+  innerWidth, // Plot's inner width
+  marginLeft, // Left margin
+  uniqueScaling, // All available scaling categories
+  selectedScalings, // Currently toggled scaling categories
+  setSelectedScalings, // Function to update the selected scalings
   colorScale,
 }) => {
+  const [tooltipOpen, setTooltipOpen] = useState(false);
+
+  // Toggle tooltip when hovering over the legend container
+  const handleMouseEnter = () => setTooltipOpen(true);
+  const handleMouseLeave = () => setTooltipOpen(false);
+
   // Toggle a scaling category on/off
   const handleCheckboxChange = (scaling) => {
     if (selectedScalings.includes(scaling)) {
@@ -26,15 +32,15 @@ const Legend = ({
         textAlign: "center",
       }}
     >
-
-
-      {/* Scaling factors toggled as buttons */}
       <fieldset style={{ border: "none" }}>
-      <legend
+        <legend
           style={{
             position: "relative",
             display: "inline-block",
+            cursor: "pointer", // adds pointer cursor on hover
           }}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
           <span>Scaling factors</span>
           <div
@@ -45,7 +51,7 @@ const Legend = ({
               transform: "translateX(0px) translateY(-54%)",
             }}
           >
-            <SFTooltip />
+            <SFTooltip open={tooltipOpen} />
           </div>
         </legend>
 

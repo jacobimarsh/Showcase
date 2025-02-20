@@ -1,4 +1,4 @@
-import TooltipIcons from "../Tooltips/TooltipIcons"
+// import TooltipIcons from "../Tooltips/TooltipIcons"
 
 export const Marks = ({
   data,
@@ -25,13 +25,5 @@ export const Marks = ({
     </circle>
   ))
 }
-
-{/* Tooltip icons */}
-<TooltipIcons
-      circleX={680}
-      circleY={112 + 31} // your legend circle Y position
-      circleRadius={circleRadius}
-      lineY={112}       // horizontal line Y position
-    />
   </>
 )
