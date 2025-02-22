@@ -15,9 +15,10 @@ const Chart = ({ axesProps, marksProps, lineProps }) => {
           <Marks {...marksProps} />
         </g>
       </svg>
-      <TooltipLegend />
-      <StarTooltip />
-
+        <TooltipLegend />
+      <div style={{ marginLeft: axesProps.marginLeft }}>
+        <StarTooltip />
+      </div>
     </div>
   );
 };

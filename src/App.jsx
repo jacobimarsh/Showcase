@@ -5,6 +5,7 @@ import Controls from "./components/Controls.jsx";
 import Legend from "./components/Legend.jsx";
 import Chart from "./components/Chart.jsx";
 import "./App.css";
+import Description from "./components/Description.jsx";
 
 const App = () => {
   // const csvUrl = "/processed_sweepdata.csv"; // Old data pre-mirror
@@ -22,14 +23,15 @@ const App = () => {
   }
 
   return (
-    <div style={{ overflowX: "auto", width: "100%" }}>      
-    <Legend {...legendProps} />
-      <Chart
-        axesProps={chartAxesProps}
-        marksProps={chartMarksProps}
-        lineProps={chartLineProps}
-      />
-      <Controls {...controlsProps} />
+    <div className="h-screen overflow-y-auto p-10">      
+      <div className="flex items-center h-full justify-center">
+        <div>
+          <Legend {...legendProps} />
+          <Chart axesProps={chartAxesProps} marksProps={chartMarksProps} lineProps={chartLineProps} />
+          <Controls {...controlsProps} />
+        </div>
+        <Description />
+      </div>
     </div>
   );
 };

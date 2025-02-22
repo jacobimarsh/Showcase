@@ -11,6 +11,7 @@ const StarTooltip = () => {
     position: "absolute",
     left: 525,
     top: 436,
+    transform: "translateX(-22.5px)",
     zIndex: 1000,
     display: "flex",
     alignItems: "center",
