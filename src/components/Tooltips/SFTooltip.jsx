@@ -6,9 +6,12 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 const SFTooltip = ({ open }) => {
   return (
     <Tooltip 
-      title="Simulated population size is divided by X for tractability" 
+      title="Simulated population size is divided by X for tractability while preserving popgen dynamics" 
       placement="right"
       open={open}
+      slotProps={{
+        tooltip: { sx: { fontSize: "14px" } },
+      }}
     >
       <IconButton
         sx={{

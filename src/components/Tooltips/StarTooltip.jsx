@@ -36,8 +36,21 @@ const StarTooltip = () => {
             and quickly spreads through the population
           </div>
         }
-        placement="right"
-        open={open}  // control open state programmatically
+        placement="top-start"
+        open={open}
+        slotProps={{
+          tooltip: { sx: { fontSize: "14px" } },
+        }}
+        PopperProps={{
+          modifiers: [
+            {
+              name: "offset",
+              options: {
+                offset: [0,-4], // [skidding, distance]: moves tooltip down by 4px
+              },
+            },
+          ],
+        }}
       >
         <IconButton
           sx={{
