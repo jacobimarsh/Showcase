@@ -7,7 +7,7 @@ import TooltipMarks from "./TooltipMarks"; // Import the TooltipMarks component
 const extraHoverArea = 35; // Adjust extra hover area in px
 const iconWidth = 24;
 const totalWidth = extraHoverArea + iconWidth;
-const originalLeft = 833; // Original absolute position for the icon
+const originalLeft = 833 - 40; // Original absolute position for the icon
 
 const DotTooltip = () => {
   return (

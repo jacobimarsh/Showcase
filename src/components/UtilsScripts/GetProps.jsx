@@ -2,7 +2,7 @@ import { useState } from "react";
 import { scaleOrdinal, format, scaleLinear } from "d3";
 import useAutoPlay from "../ControlsScripts/useAutoPlay";
 
-const width = 960;
+const width = 920;
 const height = 500;
 const margin = { top: 20, right: 30, bottom: 65, left: 95 };
 const xAxisLabelOffset = 45;

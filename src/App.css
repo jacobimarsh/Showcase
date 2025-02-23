@@ -77,3 +77,10 @@ label {
 .MuiTooltip-arrow {
   color: #3e3c38 !important;
 }
+
+@media (min-height: 740px) {
+  .vertical-center-when-short {
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}

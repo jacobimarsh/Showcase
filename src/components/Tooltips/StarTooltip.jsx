@@ -11,7 +11,7 @@ const StarTooltip = () => {
     position: "absolute",
     left: 525,
     top: 436,
-    transform: "translateX(-22.5px)",
+    transform: "translateX(-42.5px)", // Check when changing marginLeft
     zIndex: 1000,
     display: "flex",
     alignItems: "center",

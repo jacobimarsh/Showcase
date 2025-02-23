@@ -2,7 +2,7 @@ import React from "react";
 
 const TooltipMarks = () => {
   // Hardcoded absolute values for the mark and line
-  const circleX = 816;
+  const circleX = 816 - 40;
   const circleY = 162.8; // 143, the absolute y-position for the circle
   const circleRadius = 4.5;
   const circleFill = "#3e3c38";

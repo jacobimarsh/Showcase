@@ -23,14 +23,17 @@ const App = () => {
   }
 
   return (
-    <div className="h-screen overflow-y-auto p-10">      
-      <div className="flex items-center h-full justify-center">
-        <div>
+    <div className="h-screen overflow-auto p-10">      
+      <div className="flex items-center [@media(min-height:955px)]:h-full justify-center flex-row max-[1340px]:flex-col">
+        <div className="Figure">
           <Legend {...legendProps} />
           <Chart axesProps={chartAxesProps} marksProps={chartMarksProps} lineProps={chartLineProps} />
           <Controls {...controlsProps} />
         </div>
-        <Description />
+        {/* When the screen is less than 1340px, move Description 100px to the right */}
+        <div className="max-[1340px]:ml-[95px]">
+          <Description />
+        </div>
       </div>
     </div>
   );
