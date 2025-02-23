@@ -15,7 +15,7 @@ const Description = () => {
         </h2>
         <h3 className="my-5">[Marsh, Kaushik and Johri 2025]</h3>
         <p>
-          Interactive plot of nucleotide diversity observed for 100 bp bins in a strictly neutral region as a function of distance from a single moderately strong beneficial mutation, <em>2Ns</em> = 100, reaching fixation from simulations with different scaling factors.
+          Interactive plot of nucleotide diversity observed for 100 bp bins in a strictly neutral region as a function of distance from a single moderately strong beneficial mutation of strength <em>2Ns</em> = 100 that reaches fixation from simulations with different scaling factors. The line represents the expected diversity calculated post-fixation (see Eq. 6).
         </p>
       </div>
     </div>
