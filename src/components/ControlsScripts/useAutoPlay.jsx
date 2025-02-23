@@ -9,7 +9,7 @@ const useAutoPlay = ({ isPlaying, setStageIndex, uniqueStages }) => {
         setStageIndex((prevIndex) =>
           prevIndex >= uniqueStages.length - 1 ? 0 : prevIndex + 1,
         );
-      }, 1500);
+      }, 750);
     }
 
     return () => {
