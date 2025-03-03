@@ -6,7 +6,7 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 const SFTooltip = ({ open }) => {
   return (
     <Tooltip 
-      title="Simulated population size is divided by X for tractability while preserving popgen dynamics. For sweeps of this strength, rescaling does not bias hitchhiking effects." 
+      title="Simulated population size is divided by X for tractability while preserving popgen dynamics. For sweeps of this strength, rescaling does not bias hitchhiking effects!" 
       placement="right"
       open={open}
       slotProps={{
