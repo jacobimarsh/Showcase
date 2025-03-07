@@ -1,6 +1,6 @@
 import React from "react";
 
-const Description = () => {
+const Description = ({title, author, text}) => {
   return (
     <div className="relative p-4 flex flex-col items-center justify-center w-[95%] text-center max-w-[650px]">
       {/* Vertical separator for wide screens, centered vertically and 80% tall */}
@@ -11,11 +11,11 @@ const Description = () => {
       </div>
       <div className="relative z-10">
         <h2 className="text-xl font-bold">
-          Figure 4. Selective sweep dynamics for simulated populations with rescaling
+          {title}
         </h2>
-        <h3 className="my-5">[Marsh, Kaushik and Johri 2025]</h3>
+        <h3 className="my-5">{author}</h3>
         <p>
-          Interactive plot of nucleotide diversity observed for 100 bp bins in a strictly neutral region as a function of distance from a single moderately strong beneficial mutation of strength <em>2Ns</em> = 100 that reaches fixation from simulations with different scaling factors. The line represents the expected diversity calculated post-fixation (see Eq. 6).
+          {text}
         </p>
       </div>
     </div>

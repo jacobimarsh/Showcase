@@ -49,15 +49,27 @@ const App = () => {
             <Controls {...controlsProps} />
           </div>
         }
-        description={<Description />}
+        description={<Description 
+          title="Figure 4. Selective sweep dynamics for simulated populations with rescaling"
+          author="[Marsh, Kaushik and Johri 2025]"
+          text="Interactive plot of nucleotide diversity observed for 100 bp bins in a strictly neutral region as a function of distance from a single moderately strong beneficial mutation of strength 2Ns = 100 that reaches fixation from simulations with different scaling factors. The line represents the expected diversity calculated post-fixation (see Eq. 6)."
+        />}
       />
       <FigureSection 
         figure={<div>Figure 1</div>} 
-        description={<Description />}
+        description={<Description 
+          title="Figure 1. Example Analysis"
+          author="[Author et al. 2025]"
+          text="This is a description for Figure 1, providing insights into the analysis performed and the conclusions drawn from the data."
+        />}
       />
       <FigureSection 
         figure={<div>Figure 2</div>} 
-        description={<Description />}
+        description={<Description 
+          title="Figure 2. Comparative Results"
+          author="[Author et al. 2025]"
+          text="Figure 2 compares different datasets and highlights the significant patterns observed across the samples."
+        />}
       />
     </div>
   );
