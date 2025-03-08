@@ -9,11 +9,11 @@ import "./App.css";
 
 const FigureSection = ({ figure, description }) => {
   return (
-    <div className="flex items-center [@media(min-height:955px)]:h-full justify-center flex-row max-[1340px]:flex-col">
+    <div className="flex items-center [@media(min-height:955px)]:h-full [@media(max-width:980px)]:items-start justify-center flex-row max-[1340px]:flex-col"> 
       <div>
         {figure}
       </div>
-      <div>
+      <div className="max-[1340px]:ml-[95px]">
         {description}
       </div>
     </div>
