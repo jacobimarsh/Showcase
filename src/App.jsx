@@ -50,7 +50,7 @@ const App = () => {
           </div>
         }
         description={<Description 
-          title="Figure 4. Selective sweep dynamics for simulated populations with rescaling"
+          title="Selective sweep dynamics for simulated populations with rescaling"
           author="[Marsh, Kaushik and Johri 2025]"
           text="Interactive plot of nucleotide diversity observed for 100 bp bins in a strictly neutral region as a function of distance from a single moderately strong beneficial mutation of strength 2Ns = 100 that reaches fixation from simulations with different scaling factors. The line represents the expected diversity calculated post-fixation (see Eq. 6)."
         />}
@@ -58,17 +58,17 @@ const App = () => {
       <FigureSection 
         figure={<div>Figure 1</div>} 
         description={<Description 
-          title="Figure 1. Example Analysis"
-          author="[Author et al. 2025]"
-          text="This is a description for Figure 1, providing insights into the analysis performed and the conclusions drawn from the data."
+          title="Selection biases demographic inference using Ancestral Recombination Graph-based approaches"
+          author="[Marsh and Johri 2024]"
+          text="Historical population size (back-in-time) inferred by Relate for human-like parameters simulated under five demographic scenarios. Colours of lines for  different selection parameters. In humans, demographic inference appears effective with ARG-based approaches, though in species with more pervasive selection we show it can be highly biased."
         />}
       />
       <FigureSection 
         figure={<div>Figure 2</div>} 
         description={<Description 
-          title="Figure 2. Comparative Results"
-          author="[Author et al. 2025]"
-          text="Figure 2 compares different datasets and highlights the significant patterns observed across the samples."
+          title="`crosshap` R package for dashboard visualization of trait mining info in local genomic regions for GWAS"
+          author="[Marsh et al 2023][Documentation]"
+          text="Overview of the local haplotype analysis pipeline performed by the three core `crosshap` functions. Preprocessing steps (a-c). Marker alleles defining haplotypes (d). Results related to individuals are visualized vertically (e-g), results related to SNPs are visualized horizontally (h-j). `crosshap` is a tool that gives a snapshot of phenotypic diversity associated with linked groups of markers in a region of interest, as well as groups of genetically similar individuals."
         />}
       />
     </div>
