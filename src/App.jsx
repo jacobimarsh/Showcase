@@ -56,7 +56,7 @@ const App = () => {
         />}
       />
       <FigureSection 
-        figure={<img src="/local_images/simrec_Figure1.png" className="w-[920px] h-auto max-w-none m-7" alt="ARG BGS Figure" />} 
+        figure={<img src="/local_images/simrec_Figure1.png" className="w-[880px] h-auto max-w-none m-7" alt="ARG BGS Figure" />} 
         description={<Description 
           title="Pitfalls when excessive rescaling of population genetic simulations: reduced diversity at linked loci"
           author="[Marsh, Kaushik and Johri 2025]"
@@ -72,7 +72,7 @@ const App = () => {
         />}
       />
       <FigureSection 
-        figure={<div>crosshap</div>} 
+        figure={<img src="/local_images/crosshap_image.jpeg" className="w-[820px] h-auto max-w-none m-7" alt="crosshap Figure" />} 
         description={<Description 
           title="`crosshap` R package for dashboard visualization of trait mining info in local genomic regions for GWAS"
           author="[Marsh et al 2023][Documentation]"
@@ -80,7 +80,7 @@ const App = () => {
         />}
       />
       <FigureSection 
-        figure={<div>Pdh1</div>} 
+        figure={<img src="/local_images/pdh1_figure2.jpg" className="w-[780px] h-auto max-w-none m-7" alt="pdh1 Figure" />} 
         description={<Description 
           title="Comparative analysis of domestication QTL led to discovery of orthologs as breeding targets in new species"
           author="[Marsh et al 2023]"
@@ -88,7 +88,7 @@ const App = () => {
         />}
       />
       <FigureSection 
-        figure={<div>cqProt-003</div>} 
+        figure={<img src="/local_images/cqprot3_figure.png" className="w-[780px] h-auto max-w-none m-7" alt="cqProt-003 figure" />} 
         description={<Description 
           title="High protein + high oil phenotype found in soy landraces with unique shared haplotypes at major QTL"
           author="[Marsh et al 2022]"
