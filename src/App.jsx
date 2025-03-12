@@ -20,6 +20,19 @@ const FigureSection = ({ figure, description }) => {
   );
 };
 
+const FigureSectionReverse = ({ figure, description }) => {
+  return (
+    <div className="flex items-center [@media(min-height:955px)]:h-full [@media(max-width:980px)]:items-start justify-center flex-row max-[1340px]:flex-col"> 
+      <div className="max-[1340px]:ml-[95px]">
+        {description}
+      </div>
+      <div>
+        {figure}
+      </div>
+    </div>
+  );
+};
+
 const App = () => {
   const csvUrl = `${import.meta.env.BASE_URL}mirrored_data.csv`;
   const data = GetData(csvUrl) || [];
@@ -55,10 +68,10 @@ const App = () => {
           text={<>Interactive plot of nucleotide diversity observed for 100 bp bins in a strictly neutral region as a function of distance from a single moderately strong beneficial mutation of strength <em>2Ns</em> = 100 that reaches fixation from simulations with different scaling factors. The line represents the expected diversity calculated post-fixation (see Eq. 6).<em> Play around and explore the results for yourself!</em></>}
         />}
       />
-      <FigureSection 
+      <FigureSectionReverse 
         figure={<img src="/local_images/simrec_Figure1.png" className="w-[880px] h-auto max-w-none m-7" alt="ARG BGS Figure" />} 
         description={<Description 
-          title={<>Pitfalls when excessive rescaling of population genetic simulations: reduced diversity at linked loci</>}
+          title={<>Pitfalls from excessive rescaling of population genetic simulations: reduced diversity at linked loci</>}
           author={<>[Marsh, Kaushik and Johri 2025]</>}
           text={<>Points and dashed lines reflect observed nucleotide diversity in simulations with selection of different parameters (colours) relative to expected diversity under neutrality. As rescaling increases (to the right), so do the genome-wide recombination and mutation rates. <em>Rescaling can cause diversity to drop well below theoretical expectations (solid lines) because multiple crossover events become prevalent (red bar at top), and both interference effects and progeny skew can become severe.</em></>}
         />}
@@ -71,7 +84,7 @@ const App = () => {
           text={<>Historical population size (back-in-time) inferred by Relate for human parameters simulated under five demographic scenarios. Colours of lines for  different selection parameters. <em>In humans, demographic inference appears effective with ARG-based approaches, though in species with more pervasive selection we show it can be highly biased</em>.</>}
         />}
       />
-      <FigureSection 
+      <FigureSectionReverse 
         figure={<img src="/local_images/crosshap_image.jpeg" className="w-[820px] h-auto max-w-none m-7" alt="crosshap Figure" />} 
         description={<Description 
           title={<>`crosshap` R package for dashboard visualization of trait mining info in local genomic regions for GWAS</>}
@@ -87,7 +100,7 @@ const App = () => {
           text={<>Phylogenetic relationship between predicted <em>PDH1</em> (pod shatter domestication QTL) orthologs and homologs. Significant motifs from multiple sequence alignment are presented on the right. <em>This analysis led to the discovery of VuPDH1 (cowpea) and VrPDH1 (mung bean) as targets for breeding and editing.</em></>}
           />}
       />
-      <FigureSection 
+      <FigureSectionReverse 
         figure={<img src="/local_images/cqprot3_figure.png" className="w-[780px] h-auto max-w-none m-7" alt="cqProt-003 figure" />} 
         description={<Description 
           title={<>High protein + high oil phenotype found in soy landraces with unique shared haplotypes at major QTL"</>}
