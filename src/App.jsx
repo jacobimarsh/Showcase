@@ -37,7 +37,7 @@ const FigureSectionReverse = ({ figure, description, style }) => {
   return (
     <>
       <div 
-        className="flex items-center justify-center flex-row max-[1340px]:flex-col"
+        className="flex items-center justify-center flex-row max-[1340px]:flex-col-reverse"
         style={style}
       > 
         <div className="max-[1340px]:ml-[95px]">
@@ -56,6 +56,7 @@ const FigureSectionReverse = ({ figure, description, style }) => {
     </>
   );
 };
+
 
 
 
@@ -93,6 +94,7 @@ const App = () => {
           author={<>[Marsh, Kaushik and Johri 2025]</>}
           text={<>Interactive plot of nucleotide diversity observed for 100 bp bins in a strictly neutral region as a function of distance from a single moderately strong beneficial mutation of strength <em>2Ns</em> = 100 that reaches fixation from simulations with different scaling factors. The line represents the expected diversity calculated post-fixation (see Eq. 6).<em> Play around and explore the results for yourself!</em></>}
         />}
+        style={{ marginBottom: "50px", marginTop: "50px" }}
       />
       <FigureSectionReverse 
         figure={<img src="/local_images/simrec_Figure1.png" className="w-[880px] h-auto max-w-none m-7" alt="ARG BGS Figure" />} 
