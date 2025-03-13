@@ -5,10 +5,12 @@ import Controls from "./components/Controls.jsx";
 import Legend from "./components/Legend.jsx";
 import Chart from "./components/Chart.jsx";
 import Description from "./components/Description.jsx";
+import DoubleHelixWithLeaves from "./components/HelixSVG.jsx";
 import "./App.css";
 
 const FigureSection = ({ figure, description }) => {
   return (
+    <>
     <div className="flex items-center [@media(min-height:955px)]:h-full [@media(max-width:980px)]:items-start justify-center flex-row max-[1340px]:flex-col"> 
       <div>
         {figure}
@@ -17,11 +19,21 @@ const FigureSection = ({ figure, description }) => {
         {description}
       </div>
     </div>
+    <div className="relative flex items-center w-full">
+    <div className="flex-1 border-t-2 border-black border-dotted"></div>
+    <img 
+      src="https://cbx-prod.b-cdn.net/COLOURBOX38113523.jpg?width=800&height=800&quality=70" 
+      className="w-[100px] mx-4"
+    />
+    <div className="flex-1 border-t-2 border-black border-dotted"></div>
+  </div>
+  </>
   );
 };
 
 const FigureSectionReverse = ({ figure, description }) => {
   return (
+    <>
     <div className="flex items-center [@media(min-height:955px)]:h-full [@media(max-width:980px)]:items-start justify-center flex-row max-[1340px]:flex-col"> 
       <div className="max-[1340px]:ml-[95px]">
         {description}
@@ -30,6 +42,15 @@ const FigureSectionReverse = ({ figure, description }) => {
         {figure}
       </div>
     </div>
+        <div className="relative flex items-center w-full">
+        <div className="flex-1 border-t-2 border-black border-dotted"></div>
+        <img 
+          src="https://cbx-prod.b-cdn.net/COLOURBOX38113523.jpg?width=800&height=800&quality=70" 
+          className="w-[100px] mx-4"
+        />
+        <div className="flex-1 border-t-2 border-black border-dotted"></div>
+      </div>
+      </>
   );
 };
 
