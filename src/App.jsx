@@ -20,12 +20,12 @@ const FigureSection = ({ figure, description }) => {
       </div>
     </div>
     <div className="relative flex items-center w-full">
-    <div className="flex-1 border-t-2 border-black border-dotted"></div>
+    <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted"></div>
     <img 
-      src="https://cbx-prod.b-cdn.net/COLOURBOX38113523.jpg?width=800&height=800&quality=70" 
-      className="w-[100px] mx-4"
+        src="../local_images/helix_leaves.svg" 
+        className="w-[100px] mx-2 p-5"
     />
-    <div className="flex-1 border-t-2 border-black border-dotted"></div>
+    <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted"></div>
   </div>
   </>
   );
@@ -43,12 +43,12 @@ const FigureSectionReverse = ({ figure, description }) => {
       </div>
     </div>
         <div className="relative flex items-center w-full">
-        <div className="flex-1 border-t-2 border-black border-dotted"></div>
+        <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted"></div>
         <img 
-          src="https://cbx-prod.b-cdn.net/COLOURBOX38113523.jpg?width=800&height=800&quality=70" 
-          className="w-[100px] mx-4"
+          src="../local_images/helix_leaves.svg" 
+          className="w-[100px] mx-2 p-5"
         />
-        <div className="flex-1 border-t-2 border-black border-dotted"></div>
+        <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted"></div>
       </div>
       </>
   );
