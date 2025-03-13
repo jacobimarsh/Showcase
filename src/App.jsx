@@ -5,44 +5,21 @@ import Controls from "./components/Controls.jsx";
 import Legend from "./components/Legend.jsx";
 import Chart from "./components/Chart.jsx";
 import Description from "./components/Description.jsx";
-import DoubleHelixWithLeaves from "./components/HelixSVG.jsx";
 import "./App.css";
 
-const FigureSection = ({ figure, description }) => {
+const FigureSection = ({ figure, description, style }) => {
   return (
     <>
-    <div className="flex items-center [@media(min-height:955px)]:h-full [@media(max-width:980px)]:items-start justify-center flex-row max-[1340px]:flex-col"> 
-      <div>
-        {figure}
+      <div 
+        className="flex items-center justify-center flex-row max-[1340px]:flex-col" 
+        style={style}
+      > 
+        <div>{figure}</div>
+        <div className="max-[1340px]:ml-[95px]">
+          {React.cloneElement(description, { reverse: false })}
+        </div>
       </div>
-      <div className="max-[1340px]:ml-[95px]">
-        {description}
-      </div>
-    </div>
-    <div className="relative flex items-center w-full">
-    <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted"></div>
-    <img 
-        src="../local_images/helix_leaves.svg" 
-        className="w-[100px] mx-2 p-5"
-    />
-    <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted"></div>
-  </div>
-  </>
-  );
-};
-
-const FigureSectionReverse = ({ figure, description }) => {
-  return (
-    <>
-    <div className="flex items-center [@media(min-height:955px)]:h-full [@media(max-width:980px)]:items-start justify-center flex-row max-[1340px]:flex-col"> 
-      <div className="max-[1340px]:ml-[95px]">
-        {description}
-      </div>
-      <div>
-        {figure}
-      </div>
-    </div>
-        <div className="relative flex items-center w-full">
+      <div className="relative flex items-center w-full">
         <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted"></div>
         <img 
           src="../local_images/helix_leaves.svg" 
@@ -50,9 +27,37 @@ const FigureSectionReverse = ({ figure, description }) => {
         />
         <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted"></div>
       </div>
-      </>
+    </>
   );
 };
+
+
+
+const FigureSectionReverse = ({ figure, description, style }) => {
+  return (
+    <>
+      <div 
+        className="flex items-center justify-center flex-row max-[1340px]:flex-col"
+        style={style}
+      > 
+        <div className="max-[1340px]:ml-[95px]">
+          {React.cloneElement(description, { reverse: true })}
+        </div>
+        <div>{figure}</div>
+      </div>
+      <div className="relative flex items-center w-full">
+        <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted"></div>
+        <img 
+          src="../local_images/helix_leaves.svg" 
+          className="w-[100px] mx-2 p-5"
+        />
+        <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted"></div>
+      </div>
+    </>
+  );
+};
+
+
 
 const App = () => {
   const csvUrl = `${import.meta.env.BASE_URL}mirrored_data.csv`;
@@ -96,6 +101,7 @@ const App = () => {
           author={<>[Marsh, Kaushik and Johri 2025]</>}
           text={<>Points and dashed lines reflect observed nucleotide diversity in simulations with selection of different parameters (colours) relative to expected diversity under neutrality. As rescaling increases (to the right), so do the genome-wide recombination and mutation rates. <em>Rescaling can cause diversity to drop well below theoretical expectations (solid lines) because multiple crossover events become prevalent (red bar at top), and both interference effects and progeny skew can become severe.</em></>}
         />}
+        style={{ minHeight: "calc(100vh - 150px)" }}
       />
       <FigureSection 
         figure={<img src="/ARG_BGS_Figure2.png" className="w-[920px] h-auto max-w-none m-7" alt="ARG BGS Figure" />} 
@@ -104,6 +110,7 @@ const App = () => {
           author={<>[Marsh and Johri 2024]</>}
           text={<>Historical population size (back-in-time) inferred by Relate for human parameters simulated under five demographic scenarios. Colours of lines for  different selection parameters. <em>In humans, demographic inference appears effective with ARG-based approaches, though in species with more pervasive selection we show it can be highly biased</em>.</>}
         />}
+        style={{ minHeight: "calc(100vh - 300px)" }}
       />
       <FigureSectionReverse 
         figure={<img src="/local_images/crosshap_image.jpeg" className="w-[820px] h-auto max-w-none m-7" alt="crosshap Figure" />} 
@@ -112,6 +119,7 @@ const App = () => {
           author={<>[Marsh et al 2023][Documentation]</>}
           text={<>Overview of the local haplotype analysis pipeline performed by the three core `crosshap` functions. Preprocessing steps (a-c). Marker alleles defining haplotypes (d). Results related to individuals are visualized vertically (e-g), results related to SNPs are visualized horizontally (h-j). <em>`crosshap` is a tool that gives a snapshot of phenotypic diversity associated with linked groups of markers in a region of interest, as well as groups of genetically similar individuals. </em></>}
         />}
+        style={{ minHeight: "calc(100vh + 100px)" }}
       />
       <FigureSection 
         figure={<img src="/local_images/pdh1_figure2.jpg" className="w-[780px] h-auto max-w-none m-7" alt="pdh1 Figure" />} 
@@ -120,6 +128,7 @@ const App = () => {
           author={<>[Marsh et al 2023]</>}
           text={<>Phylogenetic relationship between predicted <em>PDH1</em> (pod shatter domestication QTL) orthologs and homologs. Significant motifs from multiple sequence alignment are presented on the right. <em>This analysis led to the discovery of VuPDH1 (cowpea) and VrPDH1 (mung bean) as targets for breeding and editing.</em></>}
           />}
+          style={{ minHeight: "calc(100vh - 100px)" }}
       />
       <FigureSectionReverse 
         figure={<img src="/local_images/cqprot3_figure.png" className="w-[780px] h-auto max-w-none m-7" alt="cqProt-003 figure" />} 
@@ -128,6 +137,7 @@ const App = () => {
           author={<>[Marsh et al 2022]</>}
           text={<>Phenotype associations of haplotype combinations (A-I) of variants at cqProt-003 soy protein QTL with population breakdown. Each dot is an individual possessing a given haplotype population (A-G), coloured by level of domestication. <em>Haplotype C is a landrace-specific haplotype with high oil and protein.</em></>}
         />}
+        style={{ minHeight: "calc(100vh - 300px)" }}
       />
     </div>
   );
