@@ -87,6 +87,8 @@ const App = () => {
       </button>
 
 <img src="/local_images/github_icon.svg" className="w-7 h-7"></img>
+<img src="/local_images/mail_icon.svg" className="w-7 h-7"></img>
+<img src="/local_images/linkedin_icon.svg" className="w-7 h-7"></img>
 
       <p className="flex flex-col items-center justify-center text-center whitespace-pre-line pb-5">
   Made by me!
