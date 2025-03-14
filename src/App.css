@@ -85,3 +85,7 @@ label {
     justify-content: center !important;
   }
 }
+
+.scaled-container {
+  transform: scale(min(calc(1080px / 100vh), 1));
+}
