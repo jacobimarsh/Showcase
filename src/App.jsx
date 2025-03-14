@@ -14,7 +14,7 @@ const App = () => {
   };
 
   return (
-    <div ref={containerRef} className="h-screen overflow-auto p-10">
+    <div ref={containerRef} className="h-screen overflow-auto px-10">
        <div className="relative flex items-center w-full">
           <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted"></div>
           <img 
@@ -86,6 +86,13 @@ const App = () => {
         <img src="/local_images/arrow-up-solid.svg" alt="Back to top" className="w-7 h-7" />
       </button>
 
+<img src="/local_images/github_icon.svg" className="w-7 h-7"></img>
+
+      <p className="flex flex-col items-center justify-center text-center whitespace-pre-line pb-5">
+  Made by me!
+  {"\n"}Jacob I. Marsh
+  {"\n"}Bioinformatics | Software Developer
+</p>
     </div>
   );
 };
