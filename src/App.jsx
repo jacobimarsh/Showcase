@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useRef } from "react";
 import Description from "./components/Description.jsx";
 import { FigureSection, FigureSectionReverse } from "./components/CvComponents/FigureSections.jsx";
 import "./App.css";
 import D3Viz from "./components/D3Viz.jsx";
 
 const App = () => {
+  const containerRef = useRef(null); // Create a ref for the scrollable div
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (containerRef.current) {
+      containerRef.current.scrollTo({ top: 0, behavior: "smooth" }); // Scroll the div, not window
+    }
   };
 
   return (
-    <div className="h-screen overflow-auto p-10">
+    <div ref={containerRef} className="h-screen overflow-auto p-10">
       <FigureSection
         figure={<D3Viz />}
         description={<Description 
@@ -39,43 +42,15 @@ const App = () => {
         />}
         style={{ minHeight: "calc(100vh - 300px)" }}
       />
-      <FigureSectionReverse 
-        figure={<img src="/local_images/crosshap_image.jpeg" className="w-[820px] h-auto max-w-none m-7" alt="crosshap Figure" />} 
-        description={<Description 
-          title={<>`crosshap` R package for dashboard visualization of trait mining info in local genomic regions for GWAS</>}
-          author={<>[Marsh et al 2023][Documentation]</>}
-          text={<>Overview of the local haplotype analysis pipeline performed by the three core `crosshap` functions. Preprocessing steps (a-c). Marker alleles defining haplotypes (d). Results related to individuals are visualized vertically (e-g), results related to SNPs are visualized horizontally (h-j). <em>`crosshap` is a tool that gives a snapshot of phenotypic diversity associated with linked groups of markers in a region of interest, as well as groups of genetically similar individuals. </em></>}
-        />}
-        style={{ minHeight: "calc(100vh + 100px)" }}
-      />
-      <FigureSection 
-        figure={<img src="/local_images/pdh1_figure2.jpg" className="w-[780px] h-auto max-w-none m-7" alt="pdh1 Figure" />} 
-        description={<Description 
-          title={<>Comparative analysis of domestication QTL led to discovery of orthologs as breeding targets in new species</>}
-          author={<>[Marsh et al 2023]</>}
-          text={<>Phylogenetic relationship between predicted <em>PDH1</em> (pod shatter domestication QTL) orthologs and homologs. Significant motifs from multiple sequence alignment are presented on the right. <em>This analysis led to the discovery of VuPDH1 (cowpea) and VrPDH1 (mung bean) as targets for breeding and editing.</em></>}
-        />}
-        style={{ minHeight: "calc(100vh - 100px)" }}
-      />
-      <FigureSectionReverse 
-        figure={<img src="/local_images/cqprot3_figure.png" className="w-[780px] h-auto max-w-none m-7" alt="cqProt-003 figure" />} 
-        description={<Description 
-          title={<>High protein + high oil phenotype found in soy landraces with unique shared haplotypes at major QTL</>}
-          author={<>[Marsh et al 2022]</>}
-          text={<>Phenotype associations of haplotype combinations (A-I) of variants at cqProt-003 soy protein QTL with population breakdown. Each dot is an individual possessing a given haplotype population (A-G), coloured by level of domestication. <em>Haplotype C is a landrace-specific haplotype with high oil and protein.</em></>}
-        />}
-        style={{ minHeight: "calc(100vh - 300px)" }}
-      />
-
-      {/* Back to Top Button (Fixed Arrow) */}
-<button 
-  onClick={scrollToTop} 
-  className="fixed bottom-4 right-[50%] translate-x-[calc(50%-7.5px)] rounded-full opacity-35 hover:opacity-100 transition-opacity duration-300 shadow-lg flex items-center justify-center"
-  title="Back to Top"
->
-  <img src="/local_images/arrow-up-solid.svg" alt="Back to top" className="w-6 h-6" />
-</button>
-
+      
+      {/* Back to Top Button */}
+      <button 
+        onClick={scrollToTop} 
+        className="fixed bottom-4 right-[50%] translate-x-[calc(50%-7.5px)] rounded-full opacity-35 hover:opacity-100 transition-opacity duration-300 shadow-lg flex items-center justify-center"
+        title="Back to Top"
+      >
+        <img src="/local_images/arrow-up-solid.svg" alt="Back to top" className="w-6 h-6" />
+      </button>
 
     </div>
   );
