@@ -1,93 +1,16 @@
 import React from "react";
-import { GetData } from "./components/UtilsScripts/GetData.jsx";
-import GetProps from "./components/UtilsScripts/GetProps.jsx";
-import Controls from "./components/Controls.jsx";
-import Legend from "./components/Legend.jsx";
-import Chart from "./components/Chart.jsx";
 import Description from "./components/Description.jsx";
+import { FigureSection, FigureSectionReverse } from "./components/CvComponents/FigureSections.jsx";
 import "./App.css";
-
-const FigureSection = ({ figure, description, style }) => {
-  return (
-    <>
-      <div 
-        className="flex items-center justify-center flex-row max-[1340px]:flex-col" 
-        style={style}
-      > 
-        <div>{figure}</div>
-        <div className="max-[1340px]:ml-[95px]">
-          {React.cloneElement(description, { reverse: false })}
-        </div>
-      </div>
-      <div className="relative flex items-center w-full">
-        <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted"></div>
-        <img 
-          src="../local_images/helix_leaves.svg" 
-          className="w-[100px] mx-2 p-5"
-        />
-        <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted"></div>
-      </div>
-    </>
-  );
-};
-
-
-
-const FigureSectionReverse = ({ figure, description, style }) => {
-  return (
-    <>
-      <div 
-        className="flex items-center justify-center flex-row max-[1340px]:flex-col-reverse"
-        style={style}
-      > 
-        <div className="max-[1340px]:ml-[95px]">
-          {React.cloneElement(description, { reverse: true })}
-        </div>
-        <div>{figure}</div>
-      </div>
-      <div className="relative flex items-center w-full">
-        <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted"></div>
-        <img 
-          src="../local_images/helix_leaves.svg" 
-          className="w-[100px] mx-2 p-5"
-        />
-        <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted"></div>
-      </div>
-    </>
-  );
-};
-
-
-
+import D3Viz from "./components/D3Viz.jsx";
 
 const App = () => {
-  const csvUrl = `${import.meta.env.BASE_URL}mirrored_data.csv`;
-  const data = GetData(csvUrl) || [];
-  const {
-    controlsProps,
-    legendProps,
-    chartAxesProps,
-    chartMarksProps,
-    chartLineProps,
-  } = GetProps(data);
-
-  if (!data || data.length === 0) {
-    return <div>Loading or no data found...</div>;
-  }
 
   return (
     <div className="h-screen overflow-auto p-10">
       <FigureSection
         figure={
-          <div className="Figure">
-            <Legend {...legendProps} />
-            <Chart 
-              axesProps={chartAxesProps} 
-              marksProps={chartMarksProps} 
-              lineProps={chartLineProps} 
-            />
-            <Controls {...controlsProps} />
-          </div>
+          <D3Viz />
         }
         description={<Description 
           title={<>Rescaling simulations can massively increase computational efficiency while preserving dynamics of selective sweeps</>}
@@ -135,7 +58,7 @@ const App = () => {
       <FigureSectionReverse 
         figure={<img src="/local_images/cqprot3_figure.png" className="w-[780px] h-auto max-w-none m-7" alt="cqProt-003 figure" />} 
         description={<Description 
-          title={<>High protein + high oil phenotype found in soy landraces with unique shared haplotypes at major QTL"</>}
+          title={<>High protein + high oil phenotype found in soy landraces with unique shared haplotypes at major QTL</>}
           author={<>[Marsh et al 2022]</>}
           text={<>Phenotype associations of haplotype combinations (A-I) of variants at cqProt-003 soy protein QTL with population breakdown. Each dot is an individual possessing a given haplotype population (A-G), coloured by level of domestication. <em>Haplotype C is a landrace-specific haplotype with high oil and protein.</em></>}
         />}
