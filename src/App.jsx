@@ -6,12 +6,14 @@ import D3Viz from "./components/D3Viz.jsx";
 
 const App = () => {
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="h-screen overflow-auto p-10">
       <FigureSection
-        figure={
-          <D3Viz />
-        }
+        figure={<D3Viz />}
         description={<Description 
           title={<>Rescaling simulations can massively increase computational efficiency while preserving dynamics of selective sweeps</>}
           author={<>[Marsh, Kaushik and Johri 2025]</>}
@@ -33,7 +35,7 @@ const App = () => {
         description={<Description 
           title={<>Selection biases demographic inference using Ancestral Recombination Graph-based approaches</>}
           author={<>[Marsh and Johri 2024]</>}
-          text={<>Historical population size (back-in-time) inferred by Relate for human parameters simulated under five demographic scenarios. Colours of lines for  different selection parameters. <em>In humans, demographic inference appears effective with ARG-based approaches, though in species with more pervasive selection we show it can be highly biased</em>.</>}
+          text={<>Historical population size (back-in-time) inferred by Relate for human parameters simulated under five demographic scenarios. Colours of lines for different selection parameters. <em>In humans, demographic inference appears effective with ARG-based approaches, though in species with more pervasive selection we show it can be highly biased</em>.</>}
         />}
         style={{ minHeight: "calc(100vh - 300px)" }}
       />
@@ -52,8 +54,8 @@ const App = () => {
           title={<>Comparative analysis of domestication QTL led to discovery of orthologs as breeding targets in new species</>}
           author={<>[Marsh et al 2023]</>}
           text={<>Phylogenetic relationship between predicted <em>PDH1</em> (pod shatter domestication QTL) orthologs and homologs. Significant motifs from multiple sequence alignment are presented on the right. <em>This analysis led to the discovery of VuPDH1 (cowpea) and VrPDH1 (mung bean) as targets for breeding and editing.</em></>}
-          />}
-          style={{ minHeight: "calc(100vh - 100px)" }}
+        />}
+        style={{ minHeight: "calc(100vh - 100px)" }}
       />
       <FigureSectionReverse 
         figure={<img src="/local_images/cqprot3_figure.png" className="w-[780px] h-auto max-w-none m-7" alt="cqProt-003 figure" />} 
@@ -64,6 +66,17 @@ const App = () => {
         />}
         style={{ minHeight: "calc(100vh - 300px)" }}
       />
+
+      {/* Back to Top Button (Fixed Arrow) */}
+<button 
+  onClick={scrollToTop} 
+  className="fixed bottom-4 right-[50%] translate-x-[calc(50%-7.5px)] rounded-full opacity-35 hover:opacity-100 transition-opacity duration-300 shadow-lg flex items-center justify-center"
+  title="Back to Top"
+>
+  <img src="/local_images/arrow-up-solid.svg" alt="Back to top" className="w-6 h-6" />
+</button>
+
+
     </div>
   );
 };
