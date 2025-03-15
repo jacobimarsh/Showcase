@@ -16,12 +16,12 @@ const App = () => {
   return (
     <div ref={containerRef} className="h-screen overflow-auto px-10">
        <div className="relative flex items-center w-full">
-          <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted ml-3"></div>
+          <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted ml-7"></div>
           <img 
             src="../local_images/helix_leaves.svg" 
             className="w-[100px] mx-2 p-5"
           />
-          <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted mr-3"></div>
+          <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted mr-7"></div>
         </div>
       <FigureSection
         figure={<D3Viz />}
