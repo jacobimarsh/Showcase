@@ -13,12 +13,12 @@ export const FigureSection = ({ figure, description, style }) => {
           </div>
         </div>
         <div className="relative flex items-center w-full">
-          <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted"></div>
+          <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted ml-3"></div>
           <img 
             src="../local_images/helix_leaves.svg" 
             className="w-[100px] mx-2 p-5"
           />
-          <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted"></div>
+          <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted mr-3"></div>
         </div>
       </>
     );
@@ -37,12 +37,12 @@ export const FigureSection = ({ figure, description, style }) => {
           <div>{figure}</div>
         </div>
         <div className="relative flex items-center w-full">
-          <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted"></div>
+          <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted ml-3"></div>
           <img 
             src="../local_images/helix_leaves.svg" 
             className="w-[100px] mx-2 p-5"
           />
-          <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted"></div>
+          <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted mr-3"></div>
         </div>
       </>
     );

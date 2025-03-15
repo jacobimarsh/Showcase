@@ -16,12 +16,12 @@ const App = () => {
   return (
     <div ref={containerRef} className="h-screen overflow-auto px-10">
        <div className="relative flex items-center w-full">
-          <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted"></div>
+          <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted ml-3"></div>
           <img 
             src="../local_images/helix_leaves.svg" 
             className="w-[100px] mx-2 p-5"
           />
-          <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted"></div>
+          <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted mr-3"></div>
         </div>
       <FigureSection
         figure={<D3Viz />}
@@ -81,16 +81,18 @@ const App = () => {
       {/* Back to Top Button (Fixed Arrow) */}
       <button 
       onClick={scrollToTop} 
-      className="fixed bottom-4 right-4 translate-x-[calc(50%-7.5px)] rounded-full opacity-45 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center mr-3 mb-1"
+      className="fixed bottom-4 right-4 translate-x-[calc(50%-7.5px)] rounded-full opacity-50 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center mr-3 mb-1"
       title="Back to Top">
         <img src="/local_images/arrow-up-solid.svg" alt="Back to top" className="w-7 h-7" />
       </button>
 
-<img src="/local_images/github_icon.svg" className="w-7 h-7"></img>
-<img src="/local_images/mail_icon.svg" className="w-7 h-7"></img>
-<img src="/local_images/linkedin_icon.svg" className="w-7 h-7"></img>
+<div className="fixed top-4 right-4 flex-col z-50">
+  <img src="/local_images/linkedin_icon.svg" className="w-8 h-8 opacity-50 hover:opacity-100 m-2" />
+  <img src="/local_images/mail_icon.svg" className="w-8 h-8 opacity-50 hover:opacity-100 m-2" />
+  <img src="/local_images/github_icon.svg" className="w-8 h-8 opacity-50 hover:opacity-100 m-2" />
+</div>
 
-      <p className="flex flex-col items-center justify-center text-center whitespace-pre-line pb-5">
+      <p className="flex flex-col items-center justify-center text-center whitespace-pre-line pb-4 mt-[-7px]">
   Made by me!
   {"\n"}Jacob I. Marsh
   {"\n"}Bioinformatics | Software Developer

@@ -89,3 +89,25 @@ label {
 .scaled-container {
   transform: scale(min(calc(1080px / 100vh), 1));
 }
+
+/* Hide the scrollbar track (background) */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Optional: Customize the scrollbar thumb (handle) */
+::-webkit-scrollbar {
+  width: 8px; /* Adjust width if needed */
+  background: transparent;
+}
+
+/* Make the scrollbar thumb visible but minimal */
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.5); /* Semi-transparent thumb */
+  border-radius: 4px;
+}
+
+/* Optional: Hide scrollbar in Firefox */
+html {
+  scrollbar-color: rgba(100, 100, 100, 0.5) transparent;
+}
