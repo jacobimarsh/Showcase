@@ -1,6 +1,7 @@
 import React from "react";
 
 export const FigureSection = ({ figure, description, style }) => {
+
     return (
       <>
         <div 

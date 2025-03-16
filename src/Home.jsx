@@ -40,28 +40,28 @@ const Home = () => {
   </div>
 
   {/* Navigation Links */}
-  <p className="Hero text-2xl flex items-center justify-center text-[#3e3c3] mt-4 mb-8 space-x-4">
-    <a href="/about" target="_blank" rel="noopener noreferrer" className="hover:underline">
+  <p className="Hero text-2xl flex items-center justify-center text-[#3e3c3] mt-14 space-x-4">
+    <a href="/about" target="_blank" rel="noopener noreferrer" className="underline">
       About me
     </a>
     <span>|</span>
-    <a href="mailto:jake.marsh@live.com.au" className="hover:underline">
-      Email
-    </a>
-    <span>|</span>
-    <a href="/Jacob_Marsh_Resume12Mar.pdf" target="_blank" rel="noopener noreferrer" className="hover:underline">
+    <a href="/Jacob_Marsh_Resume12Mar.pdf" target="_blank" rel="noopener noreferrer" className="underline">
       CV
     </a>
     <span>|</span>
-    <a href="https://github.com/jacobimarsh" target="_blank" rel="noopener noreferrer" className="hover:underline">
-      GitHub
+    <a href="mailto:jake.marsh@live.com.au" className="underline">
+      Email
     </a>
     <span>|</span>
-    <a href="https://www.linkedin.com/in/jacob-marsh-2822142b5" target="_blank" rel="noopener noreferrer" className="hover:underline">
+    <a href="https://www.linkedin.com/in/jacob-marsh-2822142b5" target="_blank" rel="noopener noreferrer" className="underline">
       LinkedIn
     </a>
     <span>|</span>
-    <a href="https://scholar.google.com/citations?user=hkTXBUMAAAAJ&hl=en" className="hover:underline">
+    <a href="https://github.com/jacobimarsh" target="_blank" rel="noopener noreferrer" className="underline">
+      GitHub
+    </a>
+    <span>|</span>
+    <a href="https://scholar.google.com/citations?user=hkTXBUMAAAAJ&hl=en" className="underline">
       Publications
     </a>
   </p>
@@ -70,7 +70,7 @@ const Home = () => {
   <div className="flex-grow flex flex-col items-center justify-center text-[#3e3c3]">
     <h1 className="text-7xl font-bold Hero ml-9 mb-15">Jacob I Marsh</h1>
     <h3 className="text-4xl font-bold Hero ml-9 mt-15">
-      Scroll down for a showcase of my bioinformatics/popgen research!
+      Scroll down for a showcase of my bioinformatics research!
     </h3>
   </div>
 
@@ -104,21 +104,22 @@ const Home = () => {
         />}
         style={{ minHeight: `clamp(700px, calc(100vh - 150px), 900px)` }}
       />
-      <FigureSection 
+      <FigureSection
         figure={<img src="/ARG_BGS_Figure2.png" className="w-[920px] h-auto max-w-none m-7" alt="ARG BGS Figure" />} 
         description={<Description 
           title={<>Selection biases demographic inference using Ancestral Recombination Graph-based approaches</>}
           author={<>[Marsh and Johri 2024]</>}
           text={<>Historical population size (back-in-time) inferred by Relate for human parameters simulated under five demographic scenarios. Colours of lines for different selection parameters. <em>In humans, demographic inference appears effective with ARG-based approaches, though in species with more pervasive selection we show it can be highly biased</em>.</>}
+          narrow={true}
         />}
-        style={{ minHeight: `clamp(700px, calc(100vh - 300px), 800px)` }}
+        style={{ minHeight: `clamp(700px, calc(100vh), 500px)` }}
       />
       <FigureSectionReverse 
         figure={<img src="/local_images/crosshap_image.jpeg" className="w-[820px] h-auto max-w-none m-7" alt="crosshap Figure" />} 
         description={<Description 
           title={<>`crosshap` R package for dashboard visualization of trait mining info in local genomic regions for GWAS</>}
           author={<>[Marsh et al 2023][Documentation]</>}
-          text={<>Overview of the local haplotype analysis pipeline performed by the three core `crosshap` functions. Preprocessing steps (a-c). Marker alleles defining haplotypes (d). Results related to individuals are visualized vertically (e-g), results related to SNPs are visualized horizontally (h-j). <em>`crosshap` is a tool that gives a snapshot of phenotypic diversity associated with linked groups of markers in a region of interest, as well as groups of genetically similar individuals. </em></>}
+          text={<>Overview of the local haplotype analysis pipeline performed by the three core `crosshap` functions. Preprocessing steps (a-c). Marker alleles defining haplotypes (d). Results related to individuals are visualized vertically (e-g), results related to SNPs are visualized horizontally (h-j). <em>`crosshap` is a tool that gives a snapshot of phenotypic diversity associated with linked markers in a region of interest to highlight subpopulations with adaptive haplotypes for a QTL. </em></>}
         />}
         style={{ minHeight: `clamp(700px, calc(100vh + 100px), 1200px)` }}
       />
@@ -150,15 +151,15 @@ const Home = () => {
       </button>
 
 <div className="fixed top-4 right-4 flex flex-col z-50">
+  {/* Email */}
+  <a href="mailto:jake.marsh@live.com.au">
+    <img src="/local_images/mail_icon.svg" className="w-8 h-8 opacity-50 hover:opacity-100 m-2" alt="Email" />
+  </a>
   {/* LinkedIn */}
   <a href="https://www.linkedin.com/in/jacob-marsh-2822142b5" target="_blank" rel="noopener noreferrer">
     <img src="/local_images/linkedin_icon.svg" className="w-8 h-8 opacity-50 hover:opacity-100 m-2" alt="LinkedIn" />
   </a>
 
-  {/* Email */}
-  <a href="mailto:jake.marsh@live.com.au">
-    <img src="/local_images/mail_icon.svg" className="w-8 h-8 opacity-50 hover:opacity-100 m-2" alt="Email" />
-  </a>
 
   {/* GitHub */}
   <a href="https://github.com/jacobimarsh" target="_blank" rel="noopener noreferrer">
@@ -167,9 +168,8 @@ const Home = () => {
 </div>
 
       <p className="flex flex-col items-center justify-center text-center whitespace-pre-line pb-4 mt-[-7px]">
-  Made by me!
-  {"\n"}Jacob I. Marsh
-  {"\n"}Bioinformatics | Software
+  Made by me! [repo]
+  {"\n"}Jacob I. Marsh, Bioinformatics | Software
 </p>
     </div>
   );
