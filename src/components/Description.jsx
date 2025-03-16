@@ -27,8 +27,8 @@ const Description = ({ title, author, text, reverse = false, narrow = false }) =
 
       <div className="relative z-10">
         <h2 className="text-xl font-bold">{title}</h2>
-        <h3 className="my-5">{author}</h3>
-        <p>{text}</p>
+        <p className="mt-5 mb-2"> {text}</p>
+        <h3>{author}</h3>
       </div>
     </div>
   );

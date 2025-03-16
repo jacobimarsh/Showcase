@@ -105,7 +105,7 @@ const Home = () => {
         style={{ minHeight: `clamp(700px, calc(100vh - 150px), 900px)` }}
       />
       <FigureSection
-        figure={<img src="/ARG_BGS_Figure2.png" className="w-[920px] h-auto max-w-none m-7" alt="ARG BGS Figure" />} 
+        figure={<img src="/ARG_BGS_Figure2.png" className="w-[1020px] h-auto max-w-none" alt="ARG BGS Figure" />} 
         description={<Description 
           title={<>Selection biases demographic inference using Ancestral Recombination Graph-based approaches</>}
           author={<>[Marsh and Johri 2024]</>}
@@ -113,6 +113,7 @@ const Home = () => {
           narrow={true}
         />}
         style={{ minHeight: `clamp(700px, calc(100vh), 500px)` }}
+        narrow={true}
       />
       <FigureSectionReverse 
         figure={<img src="/local_images/crosshap_image.jpeg" className="w-[820px] h-auto max-w-none m-7" alt="crosshap Figure" />} 

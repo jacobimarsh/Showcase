@@ -1,11 +1,11 @@
 import React from "react";
 
-export const FigureSection = ({ figure, description, style }) => {
+export const FigureSection = ({ figure, description, style, narrow = false }) => {
 
     return (
       <>
         <div 
-          className="flex items-center justify-center flex-row max-[1340px]:flex-col" 
+          className={`flex items-center justify-center max-[1340px]:flex-col ${narrow ? "flex-col" : "flex-row"}`}
           style={style}
         > 
           <div>{figure}</div>
