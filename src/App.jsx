@@ -20,13 +20,13 @@ const App = () => {
   {/* Image Behind Other Elements, Just Below the Top Border */}
   <img 
     src="/local_images/out_minimini.png"
-    className="absolute top-[54px] left-0 w-1/3 opacity-50 filter grayscale contrast-125 brightness-75 invert-[18%] z-[-1] ml-3.5"
+    className="absolute top-[54px] left-0 w-1/3 opacity-45 filter grayscale contrast-125 brightness-75 invert-[18%] z-[-1] ml-3.5"
   />
   
   {/* Right Image (Mirrored, Always 70px from the top) */}
   <img 
     src="/local_images/out_minimini.png"
-    className="absolute top-[54px] right-0 scale-x-[-1] w-1/3 opacity-50 filter grayscale contrast-125 brightness-75 invert-[18%] z-[-1] mr-3.5"
+    className="absolute top-[54px] right-0 scale-x-[-1] w-1/3 opacity-45 filter grayscale contrast-125 brightness-75 invert-[18%] z-[-1] mr-3.5"
   />
 
   {/* Top Border Section */}
