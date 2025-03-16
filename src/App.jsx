@@ -14,15 +14,36 @@ const App = () => {
   };
 
   return (
+    
     <div ref={containerRef} className="h-screen overflow-auto px-10">
-       <div className="relative flex items-center w-full">
-          <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted ml-7"></div>
-          <img 
-            src="../local_images/helix_leaves.svg" 
-            className="w-[100px] mx-2 p-5"
-          />
-          <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted mr-7"></div>
-        </div>
+<div className="w-full h-screen flex flex-col">
+  <div className="relative flex items-center w-full h-[120px]">
+    <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted ml-7"></div>
+    <img 
+      src="../local_images/helix_leaves.svg" 
+      className="w-[100px] mx-2 p-5"
+    />
+    <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted mr-7"></div>
+    </div>
+
+    <p className="Hero text-2xl flex items-center justify-center text-[#3e3c3] mb-14">About me | Short CV | GitHub | Email | LinkedIn | Publications</p>
+  <div className="flex-grow flex flex-col items-center justify-center text-[#3e3c3]">
+    <h1 className="text-7xl font-bold Hero ml-9 mb-15">Jacob I Marsh</h1>
+    <h3 className="text-4xl font-bold Hero ml-9 mt-15">Scroll down for my showcase of bioinformatics/popgen research!</h3>
+    
+  </div>
+  
+
+  <div className="relative flex items-center w-full h-[120px]">
+    <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted ml-7"></div>
+    <img 
+      src="../local_images/helix_leaves.svg" 
+      className="w-[100px] mx-2 p-5"
+    />
+    <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted mr-7"></div>
+  </div>
+</div>
+
       <FigureSection
         figure={<D3Viz />}
         description={<Description 
@@ -30,7 +51,7 @@ const App = () => {
           author={<>[Marsh, Kaushik and Johri 2025]</>}
           text={<>Interactive plot of nucleotide diversity observed for 100 bp bins in a strictly neutral region as a function of distance from a single moderately strong beneficial mutation of strength <em>2Ns</em> = 100 that reaches fixation from simulations with different scaling factors. The line represents the expected diversity calculated post-fixation (see Eq. 6 in the paper).<em> Play around and explore the results for yourself!</em></>}
         />}
-        style={{ marginBottom: "50px", marginTop: "50px" }}
+        style={{ marginBottom: "50px", marginTop: "30px" }}
       />
       <FigureSectionReverse 
         figure={<img src="/local_images/simrec_Figure1.png" className="w-[880px] h-auto max-w-none m-7" alt="ARG BGS Figure" />} 
@@ -86,16 +107,27 @@ const App = () => {
         <img src="/local_images/arrow-up-solid.svg" alt="Back to top" className="w-7 h-7" />
       </button>
 
-<div className="fixed top-4 right-4 flex-col z-50">
-  <img src="/local_images/linkedin_icon.svg" className="w-8 h-8 opacity-50 hover:opacity-100 m-2" />
-  <img src="/local_images/mail_icon.svg" className="w-8 h-8 opacity-50 hover:opacity-100 m-2" />
-  <img src="/local_images/github_icon.svg" className="w-8 h-8 opacity-50 hover:opacity-100 m-2" />
+<div className="fixed top-4 right-4 flex flex-col z-50">
+  {/* LinkedIn */}
+  <a href="https://www.linkedin.com/in/jacob-marsh-2822142b5" target="_blank" rel="noopener noreferrer">
+    <img src="/local_images/linkedin_icon.svg" className="w-8 h-8 opacity-50 hover:opacity-100 m-2" alt="LinkedIn" />
+  </a>
+
+  {/* Email */}
+  <a href="mailto:jake.marsh@live.com.au">
+    <img src="/local_images/mail_icon.svg" className="w-8 h-8 opacity-50 hover:opacity-100 m-2" alt="Email" />
+  </a>
+
+  {/* GitHub */}
+  <a href="https://github.com/jacobimarsh" target="_blank" rel="noopener noreferrer">
+    <img src="/local_images/github_icon.svg" className="w-8 h-8 opacity-50 hover:opacity-100 m-2" alt="GitHub" />
+  </a>
 </div>
 
       <p className="flex flex-col items-center justify-center text-center whitespace-pre-line pb-4 mt-[-7px]">
   Made by me!
   {"\n"}Jacob I. Marsh
-  {"\n"}Bioinformatics | Software Developer
+  {"\n"}Bioinformatics | Software
 </p>
     </div>
   );
