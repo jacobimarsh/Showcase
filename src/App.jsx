@@ -16,7 +16,20 @@ const App = () => {
   return (
     
     <div ref={containerRef} className="h-screen overflow-auto px-10">
-<div className="w-full h-screen flex flex-col">
+<div className="w-full h-screen flex flex-col relative">
+  {/* Image Behind Other Elements, Just Below the Top Border */}
+  <img 
+    src="/local_images/out_minimini.png"
+    className="absolute top-[54px] left-0 w-1/3 opacity-50 filter grayscale contrast-125 brightness-75 invert-[18%] z-[-1] ml-3.5"
+  />
+  
+  {/* Right Image (Mirrored, Always 70px from the top) */}
+  <img 
+    src="/local_images/out_minimini.png"
+    className="absolute top-[54px] right-0 scale-x-[-1] w-1/3 opacity-50 filter grayscale contrast-125 brightness-75 invert-[18%] z-[-1] mr-3.5"
+  />
+
+  {/* Top Border Section */}
   <div className="relative flex items-center w-full h-[120px]">
     <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted ml-7"></div>
     <img 
@@ -24,16 +37,22 @@ const App = () => {
       className="w-[100px] mx-2 p-5"
     />
     <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted mr-7"></div>
-    </div>
+  </div>
 
-    <p className="Hero text-2xl flex items-center justify-center text-[#3e3c3] mb-14">About me | Short CV | GitHub | Email | LinkedIn | Publications</p>
+  {/* Navigation Links */}
+  <p className="Hero text-2xl flex items-center justify-center text-[#3e3c3] mt-4 mb-8">
+    About me | CV | GitHub | Email | LinkedIn | Publications
+  </p>
+
+  {/* Main Content */}
   <div className="flex-grow flex flex-col items-center justify-center text-[#3e3c3]">
     <h1 className="text-7xl font-bold Hero ml-9 mb-15">Jacob I Marsh</h1>
-    <h3 className="text-4xl font-bold Hero ml-9 mt-15">Scroll down for my showcase of bioinformatics/popgen research!</h3>
-    
+    <h3 className="text-4xl font-bold Hero ml-9 mt-15">
+      Scroll down for a showcase of my bioinformatics/popgen research!
+    </h3>
   </div>
-  
 
+  {/* Bottom Border Section */}
   <div className="relative flex items-center w-full h-[120px]">
     <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted ml-7"></div>
     <img 
@@ -43,6 +62,7 @@ const App = () => {
     <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted mr-7"></div>
   </div>
 </div>
+
 
       <FigureSection
         figure={<D3Viz />}
