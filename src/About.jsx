@@ -65,21 +65,21 @@ const About = () => {
     </div>
     {/* "mr-2 px-4 py-2 rounded-xl transition duration-200 focus:outline-none" */}
 
-    <h3 className="text-[20px] font-bold Hero ml-9 mt-14">
+    <h3 className="text-[20px] 2xl:text-[24px] font-bold Hero ml-9 mt-14">
       Hi, my name's Jacob, I'm a bioinformatics software dev and genetics researcher from Australia currently based in North Carolina!
     </h3>
-    <h3 className="text-[20px] font-bold Hero ml-9 mt-6">
+    <h3 className="text-[20px] 2xl:text-[24px] font-bold Hero ml-9 mt-6">
       I have a PhD in applied bioinformatics, which focused on developing and applying software to identify legume crop QTLs from genomics data.
       After my PhD, I moved from my hometown in Perth over to the Chapel Hill to do a postdoc with Parul Johri (link) which has given me a 
       deep appreciation for the value of population genetics theory to inform effective inference software and analysis. During my time in academia 
       I've dipped my toes (or been completely submerged) in all sorts of research including transcriptomics (scRNA-seq), epigenetics,
       metagenomics, pangenomics, clustering algorithms and population simulations.
     </h3>
-    <h3 className="text-[20px] font-bold Hero ml-9 mt-6">
+    <h3 className="text-[20px] 2xl:text-[24px] font-bold Hero ml-9 mt-6">
       I love developing programs that can accelerate analysis and give non-technical users the tools to 
       better understand, explore, and apply their sequencing data.
     </h3>
-    <h3 className="text-[20px] font-bold Hero ml-9 mt-6">
+    <h3 className="text-[20px] 2xl:text-[24px] font-bold Hero ml-9 mt-6">
     If you have any shared interests feel free to get in touch :)
     </h3>
   </div>
@@ -93,6 +93,12 @@ const About = () => {
     />
     <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted mr-7"></div>
   </div>
+  <p className="flex flex-col items-center justify-center text-center whitespace-pre-line pb-4 pt-4 mt-[-6px]">
+  <a href="https://github.com/jacobimarsh/Showcase" target="_blank" rel="noopener noreferrer" className="underline">Made by me!</a>
+  {"\n"}Jacob I. Marsh, Bioinformatics | Software
+</p>
+
+  
 
 
 <div className="grid grid-cols-2 grid-rows-2 gap-4 w-114 absolute top-[64px] right-0 opacity-100 z-[-1] mr-6.5"> {/* Use gap-1 for 4px spacing */}
@@ -153,10 +159,6 @@ const About = () => {
 
 
 
-<p className="flex flex-col items-center justify-center text-center whitespace-pre-line pb-4 pt-2 mt-[-7px]">
-  <a href="https://github.com/jacobimarsh/Showcase" target="_blank" rel="noopener noreferrer" className="underline">Made by me!</a>
-  {"\n"}Jacob I. Marsh, Bioinformatics | Software
-</p>
 
 
     </div>
