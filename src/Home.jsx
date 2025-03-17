@@ -90,7 +90,7 @@ const Home = () => {
         figure={<D3Viz />}
         description={<Description 
           title={<>Rescaling simulations can massively increase computational efficiency while preserving dynamics of selective sweeps</>}
-          author={<>[Marsh, Kaushik and Johri 2025]</>}
+          author={<>(Marsh, Kaushik and Johri 2025)</>}
           text={<>Interactive plot of nucleotide diversity observed for 100 bp bins in a strictly neutral region as a function of distance from a single moderately strong beneficial mutation of strength <em>2Ns</em> = 100 that reaches fixation from simulations with different scaling factors. The line represents the expected diversity calculated post-fixation (see Eq. 6 in the paper).<em> Play around and explore the results for yourself!</em></>}
         />}
         style={{ marginBottom: "50px", marginTop: "30px" }}
@@ -99,7 +99,7 @@ const Home = () => {
         figure={<img src="/local_images/simrec_Figure1.png" className="w-[880px] h-auto max-w-none m-7" alt="ARG BGS Figure" />} 
         description={<Description 
           title={<>Pitfalls from excessive rescaling of population genetic simulations: reduced diversity at linked loci</>}
-          author={<>[Marsh, Kaushik and Johri 2025]</>}
+          author={<>(Marsh, Kaushik and Johri 2025)</>}
           text={<>Points and dashed lines reflect observed nucleotide diversity in simulations with selection of different parameters (colours) relative to expected diversity under neutrality. As rescaling increases (to the right), so do the genome-wide recombination and mutation rates. <em>Rescaling can cause diversity to drop well below theoretical expectations (solid lines) because multiple crossover events become prevalent (red bar at top), and both interference effects and progeny skew can become severe.</em></>}
         />}
         style={{ minHeight: `clamp(700px, calc(100vh - 150px), 900px)` }}
@@ -107,8 +107,8 @@ const Home = () => {
       <FigureSection
         figure={<img src="/ARG_BGS_Figure2.png" className="w-[1020px] h-auto max-w-none" alt="ARG BGS Figure" />} 
         description={<Description 
-          title={<>Selection biases demographic inference using Ancestral Recombination Graph-based approaches</>}
-          author={<>[Marsh and Johri 2024]</>}
+          title={<>Selection can bias demographic inference using Ancestral Recombination Graph-based approaches</>}
+          author={<><a href="https://doi.org/10.1093/molbev/msae118" target="_blank" rel="noopener noreferrer" className="underline">(Marsh and Johri 2024)</a></>}
           text={<>Historical population size (back-in-time) inferred by Relate for human parameters simulated under five demographic scenarios. Colours of lines for different selection parameters. <em>In humans, demographic inference appears effective with ARG-based approaches, though in species with more pervasive selection we show it can be highly biased</em>.</>}
           narrow={true}
         />}
@@ -116,20 +116,20 @@ const Home = () => {
         narrow={true}
       />
       <FigureSectionReverse 
-        figure={<img src="/local_images/crosshap_image.jpeg" className="w-[820px] h-auto max-w-none m-7" alt="crosshap Figure" />} 
+        figure={<img src="https://github.com/jacobimarsh/crosshapimages/blob/main/images/crosshap_jpg.jpg?raw=true" className="w-[780px] h-auto max-w-none m-3" alt="crosshap Figure" />} 
         description={<Description 
-          title={<>`crosshap` R package for dashboard visualization of trait mining info in local genomic regions for GWAS</>}
-          author={<>[Marsh et al 2023][Documentation]</>}
-          text={<>Overview of the local haplotype analysis pipeline performed by the three core `crosshap` functions. Preprocessing steps (a-c). Marker alleles defining haplotypes (d). Results related to individuals are visualized vertically (e-g), results related to SNPs are visualized horizontally (h-j). <em>`crosshap` is a tool that gives a snapshot of phenotypic diversity associated with linked markers in a region of interest to highlight subpopulations with adaptive haplotypes for a QTL. </em></>}
+          title={<>crosshap R package for dashboard visualization of trait mining info in local genomic regions for GWAS</>}
+          author={<><a href="https://doi.org/10.1093/bioinformatics/btad518" target="_blank" rel="noopener noreferrer" className="underline">(Marsh et al 2023)</a><a href="https://github.com/jacobimarsh/crosshap" target="_blank" rel="noopener noreferrer" className="underline">(Documentation)</a></>}
+          text={<>Visualization built by crosshap. Using a VCF, phenotype scores and metadata as input, the program performs local haplotyping of variants in a region of interest. Marker alleles defining haplotypes are displayed in the centre. Information about individuals in haplotype subpopulations are displayed vertically, genomic stats for linked marker groups and displayed horizontally. <em>crosshap is a tool that gives a snapshot of phenotypic diversity associated with linked markers in a region of interest to highlight subpopulations with adaptive haplotypes for a QTL. </em></>}
         />}
-        style={{ minHeight: `clamp(700px, calc(100vh + 100px), 1200px)` }}
+        style={{ minHeight: `clamp(600px, calc(100vh), 900px)` }}
       />
       <FigureSection 
         figure={<img src="/local_images/pdh1_figure2.jpg" className="w-[780px] h-auto max-w-none m-7" alt="pdh1 Figure" />} 
         description={<Description 
-          title={<>Comparative analysis of domestication QTL led to discovery of orthologs as breeding targets in new species</>}
-          author={<>[Marsh et al 2023]</>}
-          text={<>Phylogenetic relationship between predicted <em>PDH1</em> (pod shatter domestication QTL) orthologs and homologs. Significant motifs from multiple sequence alignment are presented on the right. <em>This analysis led to the discovery of VuPDH1 (cowpea) and VrPDH1 (mung bean) as targets for breeding and editing.</em></>}
+          title={<>Pod shatter QTL orthologs identified as breeding targets in cowpea and mung bean using comparative genomics and transcriptomics</>}
+          author={<><a href="https://doi.org/10.1111/tpj.16209" target="_blank" rel="noopener noreferrer" className="underline">(Marsh et al 2023)</a></>}
+          text={<>Phylogenetic relationship between predicted <em>PDH1</em> (pod shatter gene) orthologs and homologs. Significant motifs from multiple sequence alignment are presented on the right. <em>PDH1 is a known QTL in soybean and bean, but this analysis led to discoveries including massive tissue specific expression of VuPDH1 in developing cowpea pods.</em></>}
         />}
         style={{ minHeight: `clamp(700px, calc(100vh - 100px), 1000px)` }}
       />
@@ -137,8 +137,8 @@ const Home = () => {
         figure={<img src="/local_images/cqprot3_figure.png" className="w-[780px] h-auto max-w-none m-7" alt="cqProt-003 figure" />} 
         description={<Description 
           title={<>High protein + high oil phenotype found in soy landraces with unique shared haplotypes at major QTL</>}
-          author={<>[Marsh et al 2022]</>}
-          text={<>Phenotype associations of haplotype combinations (A-I) of variants at cqProt-003 soy protein QTL with population breakdown. Each dot is an individual possessing a given haplotype population (A-G), coloured by level of domestication. <em>Haplotype C is a landrace-specific haplotype with high oil and protein.</em></>}
+          author={<><a href="https://doi.org/10.1007/s00122-022-04045-8" target="_blank" rel="noopener noreferrer" className="underline">(Marsh et al 2022)</a></>}
+          text={<>Phenotype associations of haplotype combinations (A-I) of variants at cqProt-003 soy protein QTL with population breakdown. Each dot is an individual possessing a given haplotype population (A-G), coloured by level of domestication. <em>Haplotype C is a landrace-specific haplotype with high oil and protein and may be useful germplasm for breeding.</em></>}
         />}
         style={{ minHeight: `clamp(700px, calc(100vh - 300px), 900px)` }}
       />
@@ -169,7 +169,7 @@ const Home = () => {
 </div>
 
       <p className="flex flex-col items-center justify-center text-center whitespace-pre-line pb-4 mt-[-7px]">
-  Made by me! [repo]
+  <a href="https://github.com/jacobimarsh/Showcase" target="_blank" rel="noopener noreferrer" className="underline">Made by me!</a>
   {"\n"}Jacob I. Marsh, Bioinformatics | Software
 </p>
     </div>
