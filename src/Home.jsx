@@ -45,7 +45,7 @@ const Home = () => {
       About me
     </a>
     <span>|</span>
-    <a href="/Jacob_Marsh_Resume12Mar.pdf" target="_blank" rel="noopener noreferrer" className="underline">
+    <a href="/Jacob_Marsh_Resume17Mar.pdf" target="_blank" rel="noopener noreferrer" className="underline">
       CV
     </a>
     <span>|</span>
