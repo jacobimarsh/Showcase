@@ -1,5 +1,33 @@
 import React, { useRef } from "react";
 import "./App.css";
+import { useNavigate } from "react-router-dom";
+
+const BackButton = () => {
+  const navigate = useNavigate(); // ✅ Hook is inside the functional component
+
+  return (
+    <button className="ml-30 px-2 py-2 rounded-xl transition duration-200 focus:outline-none"
+    style={{
+      width: "150px",
+      backgroundColor: "white",
+      color: "#3e3c38",
+      border: "2px solid #3e3c38",
+      transition: "background-color 0.1s ease, color 0.1s ease",
+    }}
+    onMouseEnter={(e) => {
+      e.target.style.backgroundColor = "#3e3c38";
+      e.target.style.color = "white";
+    }}
+    onMouseLeave={(e) => {
+      e.target.style.backgroundColor = "white";
+      e.target.style.color = "#3e3c38";
+    }}
+    onClick={() => navigate("/")} // ⬅️ Go to Home Page
+  >
+    Back to the showcase
+  </button>
+  );
+};
 
 const About = () => {
   const containerRef = useRef(null); // Create a ref for the scrollable div
@@ -28,25 +56,32 @@ const About = () => {
 
   {/* Main Content */}
   <div className="flex-grow flex flex-col items-left text-[#3e3c3] w-[65%]">
-    <h1 className="text-7xl font-bold Hero ml-9">About me!</h1>
-    <h3 className="text-[19.2px] font-bold Hero ml-9 mt-12">
+
+    <div className="flex flex-row">
+      <h1 className="text-7xl font-bold Hero ml-9">
+        About me!
+      </h1>
+      <BackButton />
+    </div>
+    {/* "mr-2 px-4 py-2 rounded-xl transition duration-200 focus:outline-none" */}
+
+    <h3 className="text-[20px] font-bold Hero ml-9 mt-14">
       Hi, my name's Jacob, I'm a bioinformatics software dev and genetics researcher from Australia currently based in North Carolina!
     </h3>
-    <h3 className="text-[19.2px] font-bold Hero ml-9 mt-5">
+    <h3 className="text-[20px] font-bold Hero ml-9 mt-6">
       I have a PhD in applied bioinformatics, which focused on developing and applying software to identify legume crop QTLs from genomics data.
-      After my PhD, I moved from my hometown in Perth over to the Chapel Hill, NC to do a postdoc with Parul Johri (link) which has given me a 
+      After my PhD, I moved from my hometown in Perth over to the Chapel Hill to do a postdoc with Parul Johri (link) which has given me a 
       deep appreciation for the value of population genetics theory to inform effective inference software and analysis. During my time in academia 
       I've dipped my toes (or been completely submerged) in all sorts of research including transcriptomics (scRNA-seq), epigenetics,
       metagenomics, pangenomics, clustering algorithms and population simulations.
     </h3>
-    <h3 className="text-[19.2px] font-bold Hero ml-9 mt-5">
+    <h3 className="text-[20px] font-bold Hero ml-9 mt-6">
       I love developing programs that can accelerate analysis and give non-technical users the tools to 
       better understand, explore, and apply their sequencing data.
     </h3>
-    <h3 className="text-[19.2px] font-bold Hero ml-9 mt-5">
+    <h3 className="text-[20px] font-bold Hero ml-9 mt-6">
     If you have any shared interests feel free to get in touch :)
     </h3>
-    <p></p>
   </div>
 
   {/* Bottom Border Section */}
