@@ -3,31 +3,33 @@ import "./App.css";
 import { useNavigate } from "react-router-dom";
 
 const BackButton = () => {
-  const navigate = useNavigate(); // ✅ Hook is inside the functional component
+  const navigate = useNavigate(); // ✅ Hook inside the functional component
 
   return (
-    <button className="ml-30 px-2 py-2 rounded-xl transition duration-200 focus:outline-none"
-    style={{
-      width: "150px",
-      backgroundColor: "white",
-      color: "#3e3c38",
-      border: "2px solid #3e3c38",
-      transition: "background-color 0.1s ease, color 0.1s ease",
-    }}
-    onMouseEnter={(e) => {
-      e.target.style.backgroundColor = "#3e3c38";
-      e.target.style.color = "white";
-    }}
-    onMouseLeave={(e) => {
-      e.target.style.backgroundColor = "white";
-      e.target.style.color = "#3e3c38";
-    }}
-    onClick={() => navigate("/")} // ⬅️ Go to Home Page
-  >
-    Back to the showcase
-  </button>
+    <button
+      className="ml-20 px-2 py-2 rounded-md transition duration-200 focus:outline-none"
+      style={{
+        width: "115px",
+        backgroundColor: "white",
+        color: "#3e3c38",
+        border: "2px solid #3e3c38",
+        transition: "color 0.05s ease, box-shadow 0.05s ease, border 0.05s ease",
+      }}
+      onMouseEnter={(e) => {
+        e.target.style.border = "3px solid #3e3c38";
+        e.target.style.boxShadow = "0px 1px 2px rgba(62, 60, 56, 0.3)"; // Subtle shadow
+      }}
+      onMouseLeave={(e) => {
+        e.target.style.border = "2px solid #3e3c38";
+        e.target.style.boxShadow = "none"; // Remove shadow
+      }}
+      onClick={() => navigate("/")} // ⬅️ Go to Home Page
+    >
+      Back to the showcase
+    </button>
   );
 };
+
 
 const About = () => {
   const containerRef = useRef(null); // Create a ref for the scrollable div
@@ -59,7 +61,7 @@ const About = () => {
 
     <div className="flex flex-row">
       <h1 className="text-7xl font-bold Hero ml-9">
-        About me!
+        About me
       </h1>
       <BackButton />
     </div>
@@ -70,7 +72,7 @@ const About = () => {
     </h3>
     <h3 className="text-[20px] 2xl:text-[24px] font-bold Hero ml-9 mt-6">
       I have a PhD in applied bioinformatics, which focused on developing and applying software to identify legume crop QTLs from genomics data.
-      After my PhD, I moved from my hometown in Perth over to the Chapel Hill to do a postdoc with Parul Johri (link) which has given me a 
+      After my PhD, I moved from my hometown in Perth over to the Chapel Hill to do a postdoc in the Johri lab which has given me a 
       deep appreciation for the value of population genetics theory to inform effective inference software and analysis. During my time in academia 
       I've dipped my toes (or been completely submerged) in all sorts of research including transcriptomics (scRNA-seq), epigenetics,
       metagenomics, pangenomics, clustering algorithms and population simulations.
@@ -80,7 +82,7 @@ const About = () => {
       better understand, explore, and apply their sequencing data.
     </h3>
     <h3 className="text-[20px] 2xl:text-[24px] font-bold Hero ml-9 mt-6">
-    If you have any shared interests feel free to get in touch :)
+    If you have any shared interests feel free to <a href="mailto:jake.marsh@live.com.au" target="_blank" rel="noopener noreferrer" className="underline">get in touch</a>!
     </h3>
   </div>
 
@@ -97,8 +99,6 @@ const About = () => {
   <a href="https://github.com/jacobimarsh/Showcase" target="_blank" rel="noopener noreferrer" className="underline">Made by me!</a>
   {"\n"}Jacob I. Marsh, Bioinformatics | Software
 </p>
-
-  
 
 
 <div className="grid grid-cols-2 grid-rows-2 gap-4 w-114 absolute top-[64px] right-0 opacity-100 z-[-1] mr-6.5"> {/* Use gap-1 for 4px spacing */}
@@ -125,11 +125,6 @@ const About = () => {
   />
 </div>
 
-
-
-  
-
-
   {/* Bottom Right (Third Image) */}
   <div className="w-55 h-70 overflow-hidden">
     <img src="/local_images/PicCH.jpeg" className="w-full h-auto object-cover object-top" alt="CH pic"/>
@@ -155,11 +150,6 @@ const About = () => {
     <img src="/local_images/github_icon.svg" className="w-8 h-8 opacity-50 hover:opacity-100 m-2" alt="GitHub" />
   </a>
 </div>
-
-
-
-
-
 
     </div>
   );
