@@ -119,7 +119,7 @@ const Home = () => {
         figure={<img src="https://github.com/jacobimarsh/crosshapimages/blob/main/images/crosshap_jpg.jpg?raw=true" className="w-[780px] h-auto max-w-none m-3" alt="crosshap Figure" />} 
         description={<Description 
           title={<>crosshap R package for dashboard visualization of trait mining info in local genomic regions for GWAS</>}
-          author={<><a href="https://doi.org/10.1093/bioinformatics/btad518" target="_blank" rel="noopener noreferrer" className="underline">(Marsh et al 2023)</a><a href="https://github.com/jacobimarsh/crosshap" target="_blank" rel="noopener noreferrer" className="underline">(Documentation)</a></>}
+          author={<><a href="https://doi.org/10.1093/bioinformatics/btad518" target="_blank" rel="noopener noreferrer" className="underline">(Marsh et al 2023)</a><a href="https://jacobimarsh.github.io/crosshap/" target="_blank" rel="noopener noreferrer" className="underline">(Documentation)</a></>}
           text={<>Visualization built by crosshap. Using a VCF, phenotype scores and metadata as input, the program performs local haplotyping of variants in a region of interest. Marker alleles defining haplotypes are displayed in the centre. Information about individuals in haplotype subpopulations are displayed vertically, genomic stats for linked marker groups and displayed horizontally. <em>crosshap is a tool that gives a snapshot of phenotypic diversity associated with linked markers in a region of interest to highlight subpopulations with adaptive haplotypes for a QTL. </em></>}
         />}
         style={{ minHeight: `clamp(600px, calc(100vh), 900px)` }}
