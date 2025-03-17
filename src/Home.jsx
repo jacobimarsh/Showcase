@@ -19,13 +19,13 @@ const Home = () => {
 <div className="w-full h-screen flex flex-col relative">
   {/* Image Behind Other Elements, Just Below the Top Border */}
   <img 
-    src="/local_images/out_minimini.png"
+    src="/out_minimini.png"
     className="absolute top-[54px] left-0 w-1/3 opacity-45 filter grayscale contrast-125 brightness-75 invert-[18%] z-[-1] ml-3.5"
   />
   
   {/* Right Image (Mirrored, Always 70px from the top) */}
   <img 
-    src="/local_images/out_minimini.png"
+    src="/out_minimini.png"
     className="absolute top-[54px] right-0 scale-x-[-1] w-1/3 opacity-45 filter grayscale contrast-125 brightness-75 invert-[18%] z-[-1] mr-3.5"
   />
 
@@ -33,7 +33,7 @@ const Home = () => {
   <div className="relative flex items-center w-full h-[120px]">
     <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted ml-7"></div>
     <img 
-      src="../local_images/helix_leaves.svg" 
+      src="../helix_leaves.svg" 
       className="w-[100px] mx-2 p-5"
     />
     <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted mr-7"></div>
@@ -78,7 +78,7 @@ const Home = () => {
   <div className="relative flex items-center w-full h-[120px]">
     <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted ml-7"></div>
     <img 
-      src="../local_images/helix_leaves.svg" 
+      src="../helix_leaves.svg" 
       className="w-[100px] mx-2 p-5"
     />
     <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted mr-7"></div>
@@ -96,7 +96,7 @@ const Home = () => {
         style={{ marginBottom: "50px", marginTop: "30px" }}
       />
       <FigureSectionReverse 
-        figure={<img src="/local_images/simrec_Figure1.png" className="w-[880px] h-auto max-w-none m-7" alt="ARG BGS Figure" />} 
+        figure={<img src="/simrec_Figure1.png" className="w-[880px] h-auto max-w-none m-7" alt="ARG BGS Figure" />} 
         description={<Description 
           title={<>Pitfalls from excessive rescaling of population genetic simulations: reduced diversity at linked loci</>}
           author={<>(Marsh, Kaushik and Johri 2025)</>}
@@ -125,7 +125,7 @@ const Home = () => {
         style={{ minHeight: `clamp(600px, calc(100vh), 900px)` }}
       />
       <FigureSection 
-        figure={<img src="/local_images/pdh1_figure2.jpg" className="w-[780px] h-auto max-w-none m-7" alt="pdh1 Figure" />} 
+        figure={<img src="/pdh1_figure2.jpg" className="w-[780px] h-auto max-w-none m-7" alt="pdh1 Figure" />} 
         description={<Description 
           title={<>Pod shatter QTL orthologs identified as breeding targets in cowpea and mung bean using comparative genomics and transcriptomics</>}
           author={<><a href="https://doi.org/10.1111/tpj.16209" target="_blank" rel="noopener noreferrer" className="underline">(Marsh et al 2023)</a></>}
@@ -134,7 +134,7 @@ const Home = () => {
         style={{ minHeight: `clamp(700px, calc(100vh - 100px), 1000px)` }}
       />
       <FigureSectionReverse 
-        figure={<img src="/local_images/cqprot3_figure.png" className="w-[780px] h-auto max-w-none m-7" alt="cqProt-003 figure" />} 
+        figure={<img src="/cqprot3_figure.png" className="w-[780px] h-auto max-w-none m-7" alt="cqProt-003 figure" />} 
         description={<Description 
           title={<>High protein + high oil phenotype found in soy landraces with unique shared haplotypes at major QTL</>}
           author={<><a href="https://doi.org/10.1007/s00122-022-04045-8" target="_blank" rel="noopener noreferrer" className="underline">(Marsh et al 2022)</a></>}
@@ -148,23 +148,23 @@ const Home = () => {
       onClick={scrollToTop} 
       className="fixed bottom-4 right-4 translate-x-[calc(50%-7.5px)] rounded-full opacity-50 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center mr-3 mb-1"
       title="Back to Top">
-        <img src="/local_images/arrow-up-solid.svg" alt="Back to top" className="w-7 h-7" />
+        <img src="/arrow-up-solid.svg" alt="Back to top" className="w-7 h-7" />
       </button>
 
 <div className="fixed top-4 right-4 flex flex-col z-50">
   {/* Email */}
   <a href="mailto:jake.marsh@live.com.au">
-    <img src="/local_images/mail_icon.svg" className="w-8 h-8 opacity-50 hover:opacity-100 m-2" alt="Email" />
+    <img src="/mail_icon.svg" className="w-8 h-8 opacity-50 hover:opacity-100 m-2" alt="Email" />
   </a>
   {/* LinkedIn */}
   <a href="https://www.linkedin.com/in/jacob-marsh-2822142b5" target="_blank" rel="noopener noreferrer">
-    <img src="/local_images/linkedin_icon.svg" className="w-8 h-8 opacity-50 hover:opacity-100 m-2" alt="LinkedIn" />
+    <img src="/linkedin_icon.svg" className="w-8 h-8 opacity-50 hover:opacity-100 m-2" alt="LinkedIn" />
   </a>
 
 
   {/* GitHub */}
   <a href="https://github.com/jacobimarsh" target="_blank" rel="noopener noreferrer">
-    <img src="/local_images/github_icon.svg" className="w-8 h-8 opacity-50 hover:opacity-100 m-2" alt="GitHub" />
+    <img src="/github_icon.svg" className="w-8 h-8 opacity-50 hover:opacity-100 m-2" alt="GitHub" />
   </a>
 </div>
 
