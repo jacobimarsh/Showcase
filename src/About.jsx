@@ -8,10 +8,10 @@ const About = () => {
     
     <div ref={containerRef} className="h-screen overflow-auto px-10">
 <div className="w-full h-screen flex flex-col relative">
-<img 
+{/* <img 
     src="/local_images/out_minimini.png"
     className="absolute top-[54px] left-0 w-1/3 opacity-45 filter grayscale contrast-125 brightness-75 invert-[18%] z-[-1] ml-3.5"
-  />
+  /> */}
   {/* Right Image (Mirrored, Always 70px from the top) */}
 
 
@@ -27,11 +27,26 @@ const About = () => {
 
 
   {/* Main Content */}
-  <div className="flex-grow flex flex-col items-center justify-center text-[#3e3c3]">
-    <h1 className="text-7xl font-bold Hero ml-9 mb-15">Jacob I Marsh</h1>
-    <h3 className="text-4xl font-bold Hero ml-9 mt-15">
-      About me...
+  <div className="flex-grow flex flex-col items-left text-[#3e3c3] w-[65%]">
+    <h1 className="text-7xl font-bold Hero ml-9">About me!</h1>
+    <h3 className="text-[19.2px] font-bold Hero ml-9 mt-12">
+      Hi, my name's Jacob, I'm a bioinformatics software dev and genetics researcher from Australia currently based in North Carolina!
     </h3>
+    <h3 className="text-[19.2px] font-bold Hero ml-9 mt-5">
+      I have a PhD in applied bioinformatics, which focused on developing and applying software to identify legume crop QTLs from genomics data.
+      After my PhD, I moved from my hometown in Perth over to the Chapel Hill, NC to do a postdoc with Parul Johri (link) which has given me a 
+      deep appreciation for the value of population genetics theory to inform effective inference software and analysis. During my time in academia 
+      I've dipped my toes (or been completely submerged) in all sorts of research including transcriptomics (scRNA-seq), epigenetics,
+      metagenomics, pangenomics, clustering algorithms and population simulations.
+    </h3>
+    <h3 className="text-[19.2px] font-bold Hero ml-9 mt-5">
+      I love developing programs that can accelerate analysis and give non-technical users the tools to 
+      better understand, explore, and apply their sequencing data.
+    </h3>
+    <h3 className="text-[19.2px] font-bold Hero ml-9 mt-5">
+    If you have any shared interests feel free to get in touch :)
+    </h3>
+    <p></p>
   </div>
 
   {/* Bottom Border Section */}
@@ -43,7 +58,9 @@ const About = () => {
     />
     <div className="flex-1 border-t-2 border-[#3e3c38] border-dotted mr-7"></div>
   </div>
-<div className="grid grid-cols-2 grid-rows-3 gap-4 w-114 absolute top-[64px] right-0 opacity-90 z-[-1] mr-6.5"> {/* Use gap-1 for 4px spacing */}
+
+
+<div className="grid grid-cols-2 grid-rows-2 gap-4 w-114 absolute top-[64px] right-0 opacity-100 z-[-1] mr-6.5"> {/* Use gap-1 for 4px spacing */}
   {/* Top Left (First Image) */}
   <div className="w-55 h-70 overflow-hidden">
     <img src="/local_images/PicAus.jpeg" className="w-full h-auto object-cover object-top" alt="Aus pic"/>
@@ -56,14 +73,29 @@ const About = () => {
 
   {/* Bottom Left (Empty Space) */}
 
-  <div className="whitespace-pre-line justify-center text-center">Southwest Australia</div>
+  {/* <div className="whitespace-pre-line justify-center text-center">
+    Southwest Australia
+  </div> */}
+<div className="w-55 h-70 mt-[-15px] ml-3.5">
+  <img 
+    src="/local_images/soy1.jpeg" 
+    className="w-auto h-[105%] object-cover object-right-top relative" 
+    alt="Soy pic"
+  />
+</div>
+
+
+
+  
+
+
   {/* Bottom Right (Third Image) */}
   <div className="w-55 h-70 overflow-hidden">
     <img src="/local_images/PicCH.jpeg" className="w-full h-auto object-cover object-top" alt="CH pic"/>
   </div>
-  <div></div>
-  <div className="whitespace-pre-line justify-center text-center">North Carolina, USA</div>
 </div>
+
+
 </div>
 
 <div className="fixed top-4 right-4 flex flex-col z-50">
@@ -86,11 +118,12 @@ const About = () => {
 
 
 
-      <p className="flex flex-col items-center justify-center text-center whitespace-pre-line pb-4 mt-[-5px]">
-  Made by me!
-  {"\n"}Jacob I. Marsh
-  {"\n"}Bioinformatics | Software
+<p className="flex flex-col items-center justify-center text-center whitespace-pre-line pb-4 pt-2 mt-[-7px]">
+  <a href="https://github.com/jacobimarsh/Showcase" target="_blank" rel="noopener noreferrer" className="underline">Made by me!</a>
+  {"\n"}Jacob I. Marsh, Bioinformatics | Software
 </p>
+
+
     </div>
   );
 };
