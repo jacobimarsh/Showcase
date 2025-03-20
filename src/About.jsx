@@ -105,7 +105,7 @@ const About = () => {
       I did my PhD in applied bioinformatics, which focused on developing and applying software to identify legume crop QTLs from genomics data.
       After, I moved from Perth over to Chapel Hill to do a postdoc in the Johri lab which has taught me the value of population genetics theory 
       to inform effective inference software and analysis. During my time in academia 
-      I've dipped my toes (or been completely submerged) in all sorts of molacular research including transcriptomics (scRNA-seq), epigenetics,
+      I've dipped my toes (or been completely submerged) in all sorts of molecular research including transcriptomics (scRNA-seq), epigenetics,
       metagenomics, pangenomics, clustering algorithms, and population simulations.
     </h3>
     <h3 className="text-[20px] 2xl:text-[24px] font-bold Hero ml-9 mt-6">
