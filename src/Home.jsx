@@ -86,7 +86,8 @@ const Home = () => {
 </div>
 
 
-      <FigureSection
+      <div className="">
+        <FigureSection
         figure={<D3Viz />}
         description={<Description 
           title={<>Rescaling simulations can massively increase computational efficiency while preserving dynamics of selective sweeps</>}
@@ -142,6 +143,7 @@ const Home = () => {
         />}
         style={{ minHeight: `clamp(700px, calc(100vh - 300px), 900px)` }}
       />
+      </div>
 
       {/* Back to Top Button (Fixed Arrow) */}
       <button 

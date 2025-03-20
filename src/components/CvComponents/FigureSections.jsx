@@ -9,7 +9,7 @@ export const FigureSection = ({ figure, description, style, narrow = false }) =>
           style={style}
         > 
           <div>{figure}</div>
-          <div className="max-[1340px]:ml-[95px]">
+          <div className="">
             {React.cloneElement(description, { reverse: false })}
           </div>
         </div>
@@ -32,7 +32,7 @@ export const FigureSection = ({ figure, description, style, narrow = false }) =>
           className="flex items-center justify-center flex-row max-[1340px]:flex-col-reverse"
           style={style}
         > 
-          <div className="max-[1340px]:ml-[95px]">
+          <div className="">
             {React.cloneElement(description, { reverse: true })}
           </div>
           <div>{figure}</div>

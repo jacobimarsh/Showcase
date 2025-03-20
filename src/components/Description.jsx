@@ -24,7 +24,7 @@ const AlwaysHorizontalSeparator = () => (
 // Description Component
 const Description = ({ title, author, text, reverse = false, narrow = false }) => {
   return (
-    <div className="relative p-4 flex flex-col items-center justify-center text-center max-w-[900px]">
+    <div className="relative p-4 flex flex-col items-center justify-center text-center max-w-[900px] mx-auto">
       {/* Show Vertical Separator only if narrow is false */}
       {!narrow && <VerticalSeparator reverse={reverse} />}
       
