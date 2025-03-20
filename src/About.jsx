@@ -27,7 +27,7 @@ const BackButton = () => {
   </h3>
   <img 
     src="/left-arrow-svgrepo-com.svg" 
-    className="w-[180px] mr-5 mt-2 transition-transform duration-200 ease-in-out"
+    className="w-[180px] 2xl:w-[200px] mr-5 mt-2 transition-transform duration-200 ease-in-out"
   />
 </div>
 

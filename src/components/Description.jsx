@@ -8,9 +8,15 @@ const VerticalSeparator = ({ reverse }) => (
   />
 );
 
-// Horizontal Separator Component
+// Horizontal Separator Component that is hidden on wide screens
 const HorizontalSeparator = () => (
-  <div className="w-full py-2">
+  <div className="w-full p-2 min-[1340px]:hidden">
+    <div className="w-full h-[1px] border-t border-[#3e3c38]" />
+  </div>
+);
+
+const AlwaysHorizontalSeparator = () => (
+  <div className="w-full p-2">
     <div className="w-full h-[1px] border-t border-[#3e3c38]" />
   </div>
 );
@@ -18,12 +24,15 @@ const HorizontalSeparator = () => (
 // Description Component
 const Description = ({ title, author, text, reverse = false, narrow = false }) => {
   return (
-    <div className="relative p-4 flex flex-col items-center justify-center w-[95%] text-center max-w-[900px]">
+    <div className="relative p-4 flex flex-col items-center justify-center text-center max-w-[900px]">
       {/* Show Vertical Separator only if narrow is false */}
       {!narrow && <VerticalSeparator reverse={reverse} />}
       
       {/* Show Horizontal Separator always if narrow is true */}
-      {narrow && <HorizontalSeparator />}
+      {!narrow && <HorizontalSeparator />}
+
+      {narrow && <AlwaysHorizontalSeparator />}
+
 
       <div className="relative z-10">
         <h2 className="text-xl font-bold">{title}</h2>
