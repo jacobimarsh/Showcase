@@ -6,27 +6,58 @@ const BackButton = () => {
   const navigate = useNavigate(); // ✅ Hook inside the functional component
 
   return (
-    <button
-      className="ml-20 px-2 py-2 rounded-md transition duration-200 focus:outline-none"
-      style={{
-        width: "115px",
-        backgroundColor: "white",
-        color: "#3e3c38",
-        border: "2px solid #3e3c38",
-        transition: "color 0.05s ease, box-shadow 0.05s ease, border 0.05s ease",
-      }}
-      onMouseEnter={(e) => {
-        e.target.style.border = "3px solid #3e3c38";
-        e.target.style.boxShadow = "0px 1px 2px rgba(62, 60, 56, 0.3)"; // Subtle shadow
-      }}
-      onMouseLeave={(e) => {
-        e.target.style.border = "2px solid #3e3c38";
-        e.target.style.boxShadow = "none"; // Remove shadow
-      }}
-      onClick={() => navigate("/")} // ⬅️ Go to Home Page
-    >
-      Back to the showcase
-    </button>
+<div 
+  className="flex flex-col items-end translate-y-2 cursor-pointer transition-all duration-200 ease-in-out rounded-md"
+  onClick={() => navigate("/")} // ⬅️ Navigate to Home Page
+  onMouseEnter={(e) => {
+    const arrow = e.currentTarget.querySelector("img"); // Find the arrow inside the div
+    if (arrow) {
+      arrow.style.transform = "scale(1.02)"; // Enlarge arrow by 2%
+    }
+  }}
+  onMouseLeave={(e) => {
+    const arrow = e.currentTarget.querySelector("img"); // Find the arrow inside the div
+    if (arrow) {
+      arrow.style.transform = "scale(1)"; // Reset arrow to normal size
+    }
+  }}
+>
+  <h3 className="translate-y-2 px-2 rounded-md transition duration-200 focus:outline-none Hero text-[22px] 2xl:text-[26px] font-bold">
+    Back to the showcase
+  </h3>
+  <img 
+    src="/left-arrow-svgrepo-com.svg" 
+    className="w-[180px] mr-5 mt-2 transition-transform duration-200 ease-in-out"
+  />
+</div>
+
+
+
+
+
+
+    // <button
+    //   className="ml-20 px-2 py-2 rounded-md transition duration-200 focus:outline-none"
+    //   style={{
+    //     width: "115px",
+    //     backgroundColor: "white",
+    //     color: "#3e3c38",
+    //     border: "2px solid #3e3c38",
+    //     transition: "color 0.05s ease, box-shadow 0.05s ease, border 0.05s ease",
+    //   }}
+    //   onMouseEnter={(e) => {
+    //     e.target.style.border = "3px solid #3e3c38";
+    //     e.target.style.boxShadow = "0px 1px 2px rgba(62, 60, 56, 0.3)"; // Subtle shadow
+    //   }}
+    //   onMouseLeave={(e) => {
+    //     e.target.style.border = "2px solid #3e3c38";
+    //     e.target.style.boxShadow = "none"; // Remove shadow
+    //   }}
+    //   onClick={() => navigate("/")} // ⬅️ Go to Home Page
+    // >
+    //   <h3>Back to the showcase</h3>
+      
+    // </button>
   );
 };
 
@@ -59,7 +90,7 @@ const About = () => {
   {/* Main Content */}
   <div className="flex-grow flex flex-col items-left text-[#3e3c3] w-[65%]">
 
-    <div className="flex flex-row">
+    <div className="flex flex-row items-center space-x-20">
       <h1 className="text-7xl font-bold Hero ml-9">
         About me
       </h1>
@@ -71,11 +102,11 @@ const About = () => {
       Hi, my name's Jacob, I'm a bioinformatics software dev and genetics researcher from Australia currently based in North Carolina!
     </h3>
     <h3 className="text-[20px] 2xl:text-[24px] font-bold Hero ml-9 mt-6">
-      I have a PhD in applied bioinformatics, which focused on developing and applying software to identify legume crop QTLs from genomics data.
-      After my PhD, I moved from my hometown in Perth over to the Chapel Hill to do a postdoc in the Johri lab which has given me a 
-      deep appreciation for the value of population genetics theory to inform effective inference software and analysis. During my time in academia 
-      I've dipped my toes (or been completely submerged) in all sorts of research including transcriptomics (scRNA-seq), epigenetics,
-      metagenomics, pangenomics, clustering algorithms and population simulations.
+      I did my PhD in applied bioinformatics, which focused on developing and applying software to identify legume crop QTLs from genomics data.
+      After, I moved from Perth over to Chapel Hill to do a postdoc in the Johri lab which has taught me the value of population genetics theory 
+      to inform effective inference software and analysis. During my time in academia 
+      I've dipped my toes (or been completely submerged) in all sorts of molacular research including transcriptomics (scRNA-seq), epigenetics,
+      metagenomics, pangenomics, clustering algorithms, and population simulations.
     </h3>
     <h3 className="text-[20px] 2xl:text-[24px] font-bold Hero ml-9 mt-6">
       I love developing programs that can accelerate analysis and give non-technical users the tools to 
