@@ -15,6 +15,7 @@
     "@mui/icons-material": "^6.4.6",
     "@mui/material": "^6.4.6",
     "@tailwindcss/postcss": "^4.0.9",
+    "@vercel/analytics": "^1.5.0",
     "d3": "^7.9.0",
     "d3-shape": "^3.2.0",
     "postcss": "^8.5.3",

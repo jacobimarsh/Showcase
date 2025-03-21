@@ -3,6 +3,7 @@ import Description from "./components/Description.jsx";
 import { FigureSection, FigureSectionReverse } from "./components/CvComponents/FigureSections.jsx";
 import "./App.css";
 import D3Viz from "./components/D3Viz.jsx";
+import { Analytics } from "@vercel/analytics/react"
 
 const Home = () => {
   const containerRef = useRef(null); // Create a ref for the scrollable div
@@ -16,6 +17,8 @@ const Home = () => {
   return (
     
     <div ref={containerRef} className="h-screen overflow-auto px-10">
+      <Analytics />
+      
 <div className="w-full h-screen flex flex-col relative">
   {/* Image Behind Other Elements, Just Below the Top Border */}
   <img 
