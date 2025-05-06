@@ -48,7 +48,7 @@ const Home = () => {
       About me
     </a>
     <span>|</span>
-    <a href="/Jacob_Marsh_Resume17Mar.pdf" target="_blank" rel="noopener noreferrer" className="underline">
+    <a href="/Jacob_Marsh_Resume5May.pdf" target="_blank" rel="noopener noreferrer" className="underline">
       CV
     </a>
     <span>|</span>
@@ -94,7 +94,9 @@ const Home = () => {
         figure={<D3Viz />}
         description={<Description 
           title={<>Rescaling simulations can massively increase computational efficiency while preserving dynamics of selective sweeps</>}
-          author={<>(Marsh, Kaushik and Johri 2025)</>}
+          author={<><a href="https://doi.org/10.1101/2025.04.24.650500" target="_blank" rel="noopener noreferrer">
+          (Marsh, Kaushik and Johri 2025)
+        </a></>}
           text={<>Interactive plot of nucleotide diversity observed for 100 bp bins in a strictly neutral region as a function of distance from a single moderately strong beneficial mutation of strength <em>2Ns</em> = 100 that reaches fixation from simulations with different scaling factors. The line represents the expected diversity calculated post-fixation (see Eq. 6 in the paper).<em> Play around and explore the results for yourself!</em></>}
         />}
         style={{ marginBottom: "50px", marginTop: "30px" }}
@@ -103,7 +105,9 @@ const Home = () => {
         figure={<img src="/simrec_Figure1.png" className="w-[880px] h-auto max-w-none m-7" alt="ARG BGS Figure" />} 
         description={<Description 
           title={<>Pitfalls from excessive rescaling of population genetic simulations: reduced diversity at linked loci</>}
-          author={<>(Marsh, Kaushik and Johri 2025)</>}
+          author={<><a href="https://doi.org/10.1101/2025.04.24.650500" target="_blank" rel="noopener noreferrer">
+          (Marsh, Kaushik and Johri 2025)
+        </a></>}
           text={<>Points and dashed lines reflect observed nucleotide diversity in simulations with selection of different parameters (colours) relative to expected diversity under neutrality. As rescaling increases (to the right), so do the genome-wide recombination and mutation rates. <em>Rescaling can cause diversity to drop well below theoretical expectations (solid lines) because multiple crossover events become prevalent (red bar at top), and both interference effects and progeny skew can become severe.</em></>}
         />}
         style={{ minHeight: `clamp(700px, calc(100vh - 150px), 900px)` }}
