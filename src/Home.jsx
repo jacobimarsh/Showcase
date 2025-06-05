@@ -91,6 +91,21 @@ const Home = () => {
 
       <div className="">
         <FigureSection
+        figure={<img
+          src="/Bvalcalc_hexsticker_0405.svg"
+          alt="Bvalcalc logo"
+          className="w-full"          // or whatever sizing you need
+        />}
+        description={<Description 
+          title={<>Bvalcalc</>}
+          author={<><a href="https://doi.org/10.1101/2025.04.24.650500" target="_blank" rel="noopener noreferrer" className="underline">
+          (Marsh, Kaushik and Johri 2025)
+        </a></>}
+          text={<>Bvallin</>}
+        />}
+        style={{ marginBottom: "50px", marginTop: "30px" }}
+      />
+        <FigureSection
         figure={<D3Viz />}
         description={<Description 
           title={<>Rescaling simulations can massively increase computational efficiency while preserving dynamics of selective sweeps</>}
