@@ -90,23 +90,48 @@ const Home = () => {
 
 
       <div className="">
-        <FigureSection
-        figure={<img
-          src="/showcase_Bvalcalc.png"
-          alt="Bvalcalc logo"
-          className="w-[880px] h-auto max-w-none m-7"          // or whatever sizing you need
-        />}
-        description={<Description 
-          title={<>Bvalcalc</>}
-          author={<><a href="https://doi.org/10.1101/2025.04.24.650500" target="_blank" rel="noopener noreferrer" className="underline">
-          (Marsh, Kaushik and Johri 2025)
-        </a></>}
-          text={<>Bvallin</>}
-        />}
-        style={{ marginBottom: "50px", marginTop: "30px" }}
-      />
+      <FigureSection
+  figure={
+    <img
+      src="/showcase_Bvalcalc.png"
+      alt="Bvalcalc logo"
+      className="w-[880px] h-auto max-w-none m-7"
+    />
+  }
+  description={
+    <Description
+      title={
+        <div className="flex flex-col items-center">
+          {/* Hex sticker centered with respect to the divider line */}
+          <img
+            src="/Bvalcalc_hexsticker_0405.svg"
+            alt="Bvalcalc hex sticker"
+            className="w-[145px] h-auto mb-4"
+          />
+          <span>Bvalcalc</span>
+        </div>
+      }
+      author={
+        <>
+          <a
+            href="https://doi.org/10.1101/2025.04.24.650500"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            (Marsh, Kaushik and Johri 2025)
+          </a>
+        </>
+      }
+      text={<>Bvallin</>}
+    />
+  }
+  style={{ marginBottom: "50px", marginTop: "30px" }}
+/>
 
 
+
+          
 
         <FigureSection
         figure={<D3Viz />}
