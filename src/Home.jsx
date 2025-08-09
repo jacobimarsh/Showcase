@@ -131,7 +131,7 @@ const Home = () => {
           </a>)
         </>
       }
-      text={<>Bvalcalc is a python package I built that implements analytic expressions to predict expected diversity reduced by proximity to functional (conserved) sites (B). Bvalcalc calculated B for every site in a 1 Mb section of the Drosophila melanogaster genome in 4.74 seconds.</>}
+      text={<>Bvalcalc is a python package I built that implements analytic expressions to predict expected diversity reduced by proximity to functional (conserved) sites (B). Bvalcalc calculated B for every site in a 1 Mb section of the Drosophila melanogaster genome in 4.74 seconds using the CLI code displayed. The blue line represents neutral sites, black represents CDS regions with their distribution as segments at the bottom.</>}
     />
   }
   style={{ marginBottom: "50px", marginTop: "30px" }}
@@ -148,7 +148,7 @@ const Home = () => {
           author={<><a href="https://doi.org/10.1101/2025.04.24.650500" target="_blank" rel="noopener noreferrer" className="underline">
           (Marsh, Kaushik and Johri 2025)
         </a></>}
-          text={<>Interactive plot of nucleotide diversity observed for 100 bp bins in a strictly neutral region as a function of distance from a single moderately strong beneficial mutation of strength <em>2Ns</em> = 100 that reaches fixation from simulations with different scaling factors. The line represents the expected diversity calculated post-fixation (see Eq. 6 in the paper).<em> Play around and explore the results for yourself!</em></>}
+          text={<>Interactive plot of nucleotide diversity observed for 100 bp bins in a strictly neutral region as a function of distance from a single moderately strong beneficial mutation of strength <em>2Ns</em> = 100 that reaches fixation from simulations with different scaling factors. The line represents the expected diversity calculated post-fixation (see Eq. 6 in the paper).<em> Click the play button and explore the results for yourself!</em></>}
         />}
         style={{ marginBottom: "50px", marginTop: "30px" }}
       />
@@ -174,15 +174,55 @@ const Home = () => {
         style={{ minHeight: `clamp(700px, calc(100vh), 500px)` }}
         narrow={true}
       />
-      <FigureSectionReverse 
-        figure={<img src="https://github.com/jacobimarsh/crosshapimages/blob/main/images/crosshap_jpg.jpg?raw=true" className="w-[780px] h-auto max-w-none m-3" alt="crosshap Figure" />} 
-        description={<Description 
-          title={<>crosshap R package for dashboard visualization of trait mining info in local genomic regions for GWAS</>}
-          author={<><a href="https://doi.org/10.1093/bioinformatics/btad518" target="_blank" rel="noopener noreferrer" className="underline">(Marsh et al 2023)</a><a href="https://jacobimarsh.github.io/crosshap/" target="_blank" rel="noopener noreferrer" className="underline">(Documentation)</a></>}
-          text={<>Visualization built by crosshap. Using a VCF, phenotype scores and metadata as input, the program performs local haplotyping of variants in a region of interest. Marker alleles defining haplotypes are displayed in the centre. Information about individuals in haplotype subpopulations are displayed vertically, genomic stats for linked marker groups and displayed horizontally. <em>crosshap is a tool that gives a snapshot of phenotypic diversity associated with linked markers in a region of interest to highlight subpopulations with adaptive haplotypes for a QTL. </em></>}
-        />}
-        style={{ minHeight: `clamp(600px, calc(100vh), 900px)` }}
-      />
+<FigureSectionReverse 
+  figure={
+    <img
+      src="https://github.com/jacobimarsh/crosshapimages/blob/main/images/crosshap_jpg.jpg?raw=true"
+      className="w-[780px] h-auto max-w-none m-3"
+      alt="crosshap Figure"
+    />
+  } 
+  description={
+    <Description 
+      title={
+        <div className="flex flex-col items-center">
+          {/* Hex sticker above title */}
+          <img
+            src="https://github.com/JacobIMarsh/crosshapimages/blob/main/images/crosshap_hex_sticker_eps_whitebackground-01.png?raw=true"
+            alt="crosshap hex sticker"
+            className="w-[145px] h-auto mb-4"
+          />
+          <span>crosshap R package for dashboard visualization of trait mining info in local genomic regions for GWAS</span>
+        </div>
+      }
+      author={
+        <>
+          <a
+            href="https://doi.org/10.1093/bioinformatics/btad518"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            (Marsh et al 2023)
+          </a>
+          <a
+            href="https://jacobimarsh.github.io/crosshap/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            (Documentation)
+          </a>
+        </>
+      }
+      text={
+        <>Visualization built by crosshap. Using a VCF, phenotype scores and metadata as input, the program performs local haplotyping of variants in a region of interest. Marker alleles defining haplotypes are displayed in the centre. Information about individuals in haplotype subpopulations are displayed vertically, genomic stats for linked marker groups and displayed horizontally. <em>crosshap is a tool that gives a snapshot of phenotypic diversity associated with linked markers in a region of interest to highlight subpopulations with adaptive haplotypes for a QTL.</em></>
+      }
+    />
+  }
+  style={{ minHeight: `clamp(600px, calc(100vh), 900px)` }}
+/>
+
       <FigureSection 
         figure={<img src="/pdh1_figure2.jpg" className="w-[780px] h-auto max-w-none m-7" alt="pdh1 Figure" />} 
         description={<Description 
