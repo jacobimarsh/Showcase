@@ -102,8 +102,8 @@ const About = () => {
       Hi, my name's Jacob, I'm a bioinformatics software dev and genetics researcher from Australia currently based in North Carolina!
     </h3>
     <h3 className="text-[20px] 2xl:text-[24px] font-bold Hero ml-9 mt-6">
-      I did my PhD in applied bioinformatics, which focused on developing and applying software to identify legume crop QTLs from genomics data.
-      After, I moved from Perth over to Chapel Hill to do a postdoc in the Johri lab which has taught me the value of population genetics theory 
+      I did my PhD in the <a href="https://www.appliedbioinformatics.com.au/Edwards/index.php/Main_Page" target="_blank" rel="noopener noreferrer" className="underline">Applied Bioinformatics Group</a>, which focused on developing and applying software to identify legume crop QTLs from genomics data.
+      After, I moved from Perth over to Chapel Hill to do a postdoc in the <a href="https://www.johrilab.org/" target="_blank" rel="noopener noreferrer" className="underline">Johri Lab</a> which has taught me the value of population genetics theory 
       to inform effective inference software and analysis. During my time in academia 
       I've dipped my toes (or been completely submerged) in all sorts of molecular research including transcriptomics (scRNA-seq), epigenetics,
       metagenomics, pangenomics, clustering algorithms, and population simulations.
