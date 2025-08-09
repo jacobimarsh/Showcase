@@ -92,9 +92,9 @@ const Home = () => {
       <div className="">
         <FigureSection
         figure={<img
-          src="/Bvalcalc_hexsticker_0405.svg"
+          src="/showcase_Bvalcalc.png"
           alt="Bvalcalc logo"
-          className="w-full"          // or whatever sizing you need
+          className="w-[880px] h-auto max-w-none m-7"          // or whatever sizing you need
         />}
         description={<Description 
           title={<>Bvalcalc</>}
@@ -105,6 +105,9 @@ const Home = () => {
         />}
         style={{ marginBottom: "50px", marginTop: "30px" }}
       />
+
+
+
         <FigureSection
         figure={<D3Viz />}
         description={<Description 
