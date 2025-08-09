@@ -15,7 +15,6 @@ const Home = () => {
   };
 
   return (
-    
     <div ref={containerRef} className="h-screen overflow-auto px-10">
       <Analytics />
       
@@ -23,13 +22,13 @@ const Home = () => {
   {/* Image Behind Other Elements, Just Below the Top Border */}
   <img 
     src="/out_minimini.png"
-    className="absolute top-[54px] left-0 w-1/3 opacity-45 filter grayscale contrast-125 brightness-75 invert-[18%] z-[-1] ml-3.5"
+    className="absolute top-[54px] left-0 w-1/3 opacity-45 filter grayscale contrast-125 brightness-75 invert-[18%] z-[-1] ml-3.5 max-[1200px]:hidden"
   />
   
   {/* Right Image (Mirrored, Always 70px from the top) */}
   <img 
     src="/out_minimini.png"
-    className="absolute top-[54px] right-0 scale-x-[-1] w-1/3 opacity-45 filter grayscale contrast-125 brightness-75 invert-[18%] z-[-1] mr-3.5"
+    className="absolute top-[54px] right-0 scale-x-[-1] w-1/3 opacity-45 filter grayscale contrast-125 brightness-75 invert-[18%] z-[-1] mr-3.5 max-[1200px]:hidden"
   />
 
   {/* Top Border Section */}
@@ -43,7 +42,7 @@ const Home = () => {
   </div>
 
   {/* Navigation Links */}
-  <p className="Hero text-2xl flex items-center justify-center text-[#3e3c3] mt-14 space-x-4">
+  <p className="Hero text-2xl flex flex-wrap items-center justify-center text-[#3e3c3] mt-14 space-x-4 max-[1260px]:space-x-2 nav-links">
     <a href="/about" target="_blank" rel="noopener noreferrer" className="underline">
       About me
     </a>
@@ -68,6 +67,13 @@ const Home = () => {
       Publications
     </a>
   </p>
+
+  {/* Message that appears only on small/short screens via CSS below */}
+<div className="small-screen-message hidden">
+  <p className="text-2xl font-semibold text-[#3e3c3] text-center mt-6">
+    Use a larger screen to see full content! - Jacob
+  </p>
+</div>
 
   {/* Main Content */}
   <div className="flex-grow flex flex-col items-center justify-center text-[#3e3c3]">

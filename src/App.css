@@ -123,3 +123,27 @@ html {
   font-weight: 400;
   font-style: normal;
 }
+
+
+/* Show only the nav + its children + the small-screen message
+   when the screen is <1050px wide OR <700px tall */
+   @media (max-width: 1050px), (max-height: 700px) {
+    /* 1) Inside the element that DIRECTLY contains .nav-links,
+          hide all other direct children EXCEPT the message */
+    *:has(> .nav-links) > :not(.nav-links):not(.small-screen-message) {
+      display: none !important;
+    }
+  
+    /* 2) Hide everything that comes AFTER that container in the DOM */
+    *:has(> .nav-links) ~ * {
+      display: none !important;
+    }
+  
+    /* 3) Show the message (it's hidden by default in JSX) */
+    .small-screen-message {
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  
