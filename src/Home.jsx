@@ -108,22 +108,30 @@ const Home = () => {
             alt="Bvalcalc hex sticker"
             className="w-[145px] h-auto mb-4"
           />
-          <span>Bvalcalc</span>
+          <span>Map of relative expected diversity under background selection generated using the Bvalcalc CLI</span>
         </div>
       }
       author={
         <>
-          <a
+          (<a
             href="https://doi.org/10.1101/2025.04.24.650500"
             target="_blank"
             rel="noopener noreferrer"
             className="underline"
           >
-            (Marsh, Kaushik and Johri 2025)
-          </a>
+            Marsh, Kaushik and Johri 2025
+          </a>)(
+          <a
+            href="https://johrilab.github.io/Bvalcalc/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            Docs
+          </a>)
         </>
       }
-      text={<>Bvallin</>}
+      text={<>Bvalcalc is a python package I built that implements analytic expressions to predict expected diversity reduced by proximity to functional (conserved) sites (B). Bvalcalc calculated B for every site in a 1 Mb section of the Drosophila melanogaster genome in 4.74 seconds.</>}
     />
   }
   style={{ marginBottom: "50px", marginTop: "30px" }}
