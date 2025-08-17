@@ -146,4 +146,26 @@ html {
       align-items: center;
     }
   }
+
+/* Show only the nav + its children + the large-screen message
+   when the screen is >2600px wide OR >2100px tall */
+   @media (min-width: 2600px), (min-height: 2100px) {
+    /* 1) Inside the element that DIRECTLY contains .nav-links,
+          hide all other direct children EXCEPT the message */
+    *:has(> .nav-links) > :not(.nav-links):not(.large-screen-message) {
+      display: none !important;
+    }
+  
+    /* 2) Hide everything that comes AFTER that container in the DOM */
+    *:has(> .nav-links) ~ * {
+      display: none !important;
+    }
+  
+    /* 3) Show the message (it's hidden by default in JSX) */
+    .large-screen-message {
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+  }
   

@@ -71,7 +71,13 @@ const Home = () => {
   {/* Message that appears only on small/short screens via CSS below */}
 <div className="small-screen-message hidden">
   <p className="text-2xl font-semibold text-[#3e3c3] text-center mt-6">
-    Use a larger screen to see full content! - Jacob
+    Use a larger screen or zoom out to see full content! - Jacob :)
+  </p>
+</div>
+
+<div className="large-screen-message hidden">
+  <p className="text-2xl font-semibold text-[#3e3c3] text-center mt-6">
+    Use a smaller screen or zoom in to see full content! - Jacob :)
   </p>
 </div>
 

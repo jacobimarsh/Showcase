@@ -110,7 +110,7 @@ const About = () => {
     </h3>
     <h3 className="text-[20px] 2xl:text-[24px] font-bold Hero ml-9 mt-6">
       I love developing programs that can accelerate analysis and give non-technical users the tools to 
-      better understand, explore, and apply their sequencing data.
+      better understand, explore, and apply their data.
     </h3>
     <h3 className="text-[20px] 2xl:text-[24px] font-bold Hero ml-9 mt-6">
     If you have any shared interests feel free to <a href="mailto:jake.marsh@live.com.au" target="_blank" rel="noopener noreferrer" className="underline">get in touch</a>!
