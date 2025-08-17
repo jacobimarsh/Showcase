@@ -78,8 +78,9 @@ const Home = () => {
   {/* Main Content */}
   <div className="flex-grow flex flex-col items-center justify-center text-[#3e3c3]">
     <h1 className="text-7xl font-bold Hero ml-9 mb-15">Jacob I Marsh</h1>
-    <h3 className="text-4xl font-bold Hero ml-9 mt-15">
-      Scroll down for a showcase of my bioinformatics/population genetics research and software I develop!
+    <h3 className="text-4xl font-bold Hero text-center mt-15">
+      Scroll down for a showcase of my bioinformatics/population genetics research<br />
+      and software I develop!
     </h3>
   </div>
 
